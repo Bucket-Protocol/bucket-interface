@@ -1,21 +1,21 @@
-module v1_interface::bkt {
+module bucket_protocol::bkt {
 
     // ----- Use Statements -----
 
     use sui::object;
     use sui::balance;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct BKT has drop {
+    public struct BKT has drop {
         dummy_field: bool,
     }
 
-    struct BktAdminCap has store, key {
+    public struct BktAdminCap has store, key {
         id: object::UID,
     }
 
-    struct BktTreasury has key {
+    public struct BktTreasury has key {
         id: object::UID,
         eco_part: balance::Balance<BKT>,
         bkt_supply: balance::Supply<BKT>,
@@ -30,7 +30,7 @@ module v1_interface::bkt {
         abort 0
     }
 
-    public(friend) fun release_bkt(arg0: &mut BktTreasury, arg1: u64) : balance::Balance<BKT> {
+    public(package) fun release_bkt(arg0: &mut BktTreasury, arg1: u64) : balance::Balance<BKT> {
         abort 0
     }
 }

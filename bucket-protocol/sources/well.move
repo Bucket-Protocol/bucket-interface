@@ -1,16 +1,16 @@
-module v1_interface::well {
+module bucket_protocol::well {
 
     // ----- Use Statements -----
 
     use sui::object;
     use sui::balance;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
+    use bucket_protocol::bkt;
     use sui::tx_context;
     use sui::clock;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct StakedBKT<phantom T0> has store, key {
+    public struct StakedBKT<phantom T0> has store, key {
         id: object::UID,
         stake_amount: u64,
         start_s: u128,
@@ -18,11 +18,11 @@ module v1_interface::well {
         lock_until: u64,
     }
 
-    struct WELL has drop {
+    public struct WELL has drop {
         dummy_field: bool,
     }
 
-    struct Well<phantom T0> has store, key {
+    public struct Well<phantom T0> has store, key {
         id: object::UID,
         shared_pool: balance::Balance<T0>,
         reserve: balance::Balance<T0>,
@@ -96,7 +96,7 @@ module v1_interface::well {
         abort 0
     }
 
-    public(friend) fun new<T0>(arg0: &mut tx_context::TxContext) : Well<T0> {
+    public(package) fun new<T0>(arg0: &mut tx_context::TxContext) : Well<T0> {
         abort 0
     }
 }

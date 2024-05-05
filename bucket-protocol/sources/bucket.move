@@ -1,21 +1,21 @@
-module v1_interface::bucket {
+module bucket_protocol::bucket {
 
     // ----- Use Statements -----
 
     use sui::object;
     use std::option;
     use sui::balance;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bottle;
+    use bucket_protocol::bottle;
     use sui::table;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
+    use bucket_protocol::interest;
+    use bucket_protocol::strap;
+    use bucket_oracle::bucket_oracle;
     use sui::clock;
     use sui::tx_context;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct Bucket<phantom T0> has store, key {
+    public struct Bucket<phantom T0> has store, key {
         id: object::UID,
         min_collateral_ratio: u64,
         recovery_mode_threshold: u64,
@@ -30,12 +30,12 @@ module v1_interface::bucket {
         total_flash_loan_amount: u64,
     }
 
-    struct FlashReceipt<phantom T0> {
+    public struct FlashReceipt<phantom T0> {
         amount: u64,
         fee: u64,
     }
 
-    struct PendingRecord has store, key {
+    public struct PendingRecord has store, key {
         id: object::UID,
         bucket_pending_debt: u64,
         bucket_pending_collateral: u64,
@@ -190,95 +190,95 @@ module v1_interface::bucket {
         abort 0
     }
 
-    public(friend) fun accrue_interests_by_debtor<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: &clock::Clock) : u64 {
+    public(package) fun accrue_interests_by_debtor<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: &clock::Clock) : u64 {
         abort 0
     }
 
-    public(friend) fun add_interest_index_to_bottle(arg0: &mut bottle::Bottle, arg1: u256, arg2: &mut tx_context::TxContext) {
+    public(package) fun add_interest_index_to_bottle(arg0: &mut bottle::Bottle, arg1: u256, arg2: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun add_interest_index_to_bottle_by_debtor<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u256, arg3: &mut tx_context::TxContext) {
+    public(package) fun add_interest_index_to_bottle_by_debtor<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u256, arg3: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun add_interest_table_to_bucket<T0>(arg0: &mut Bucket<T0>, arg1: &clock::Clock, arg2: &mut tx_context::TxContext) {
+    public(package) fun add_interest_table_to_bucket<T0>(arg0: &mut Bucket<T0>, arg1: &clock::Clock, arg2: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun add_pending_record_to_bucket<T0>(arg0: &mut Bucket<T0>, arg1: &mut tx_context::TxContext) {
+    public(package) fun add_pending_record_to_bucket<T0>(arg0: &mut Bucket<T0>, arg1: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun adjust_pending_record<T0>(arg0: &mut Bucket<T0>, arg1: u64, arg2: u64) {
+    public(package) fun adjust_pending_record<T0>(arg0: &mut Bucket<T0>, arg1: u64, arg2: u64) {
         abort 0
     }
 
-    public(friend) fun borrow_interest_table_mut<T0>(arg0: &mut Bucket<T0>) : &mut interest::InterestTable {
+    public(package) fun borrow_interest_table_mut<T0>(arg0: &mut Bucket<T0>) : &mut interest::InterestTable {
         abort 0
     }
 
-    public(friend) fun borrow_pending_record_mut<T0>(arg0: &mut Bucket<T0>) : &mut PendingRecord {
+    public(package) fun borrow_pending_record_mut<T0>(arg0: &mut Bucket<T0>) : &mut PendingRecord {
         abort 0
     }
 
-    public(friend) fun handle_borrow<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: balance::Balance<T0>, arg5: u64, arg6: option::Option<address>, arg7: u64, arg8: &mut tx_context::TxContext) {
+    public(package) fun handle_borrow<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: balance::Balance<T0>, arg5: u64, arg6: option::Option<address>, arg7: u64, arg8: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun handle_flash_borrow<T0>(arg0: &mut Bucket<T0>, arg1: u64) : (balance::Balance<T0>, FlashReceipt<T0>) {
+    public(package) fun handle_flash_borrow<T0>(arg0: &mut Bucket<T0>, arg1: u64) : (balance::Balance<T0>, FlashReceipt<T0>) {
         abort 0
     }
 
-    public(friend) fun handle_flash_repay<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: FlashReceipt<T0>) : balance::Balance<T0> {
+    public(package) fun handle_flash_repay<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: FlashReceipt<T0>) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun handle_redeem<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: u64, arg4: option::Option<address>) : balance::Balance<T0> {
+    public(package) fun handle_redeem<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: u64, arg4: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun handle_redistribution<T0>(arg0: &mut Bucket<T0>, arg1: address) : (balance::Balance<T0>, balance::Balance<T0>) {
+    public(package) fun handle_redistribution<T0>(arg0: &mut Bucket<T0>, arg1: address) : (balance::Balance<T0>, balance::Balance<T0>) {
         abort 0
     }
 
-    public(friend) fun handle_repay<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: u64, arg4: bool, arg5: &clock::Clock) : balance::Balance<T0> {
+    public(package) fun handle_repay<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: u64, arg4: bool, arg5: &clock::Clock) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun handle_repay_capped<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: &bucket_oracle::BucketOracle, arg4: &clock::Clock) : balance::Balance<T0> {
+    public(package) fun handle_repay_capped<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: &bucket_oracle::BucketOracle, arg4: &clock::Clock) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun handle_top_up<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: address, arg3: option::Option<address>, arg4: &clock::Clock) {
+    public(package) fun handle_top_up<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: address, arg3: option::Option<address>, arg4: &clock::Clock) {
         abort 0
     }
 
-    public(friend) fun handle_withdraw<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
+    public(package) fun handle_withdraw<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun new<T0>(arg0: u64, arg1: u64, arg2: u8, arg3: option::Option<u64>, arg4: &mut tx_context::TxContext) : Bucket<T0> {
+    public(package) fun new<T0>(arg0: u64, arg1: u64, arg2: u8, arg3: option::Option<u64>, arg4: &mut tx_context::TxContext) : Bucket<T0> {
         abort 0
     }
 
-    public(friend) fun new_pending_record(arg0: &mut tx_context::TxContext) : PendingRecord {
+    public(package) fun new_pending_record(arg0: &mut tx_context::TxContext) : PendingRecord {
         abort 0
     }
 
-    public(friend) fun update_base_rate_fee<T0>(arg0: &mut Bucket<T0>, arg1: u64, arg2: u64) {
+    public(package) fun update_base_rate_fee<T0>(arg0: &mut Bucket<T0>, arg1: u64, arg2: u64) {
         abort 0
     }
 
-    public(friend) fun update_max_mint_amount<T0>(arg0: &mut Bucket<T0>, arg1: option::Option<u64>) {
+    public(package) fun update_max_mint_amount<T0>(arg0: &mut Bucket<T0>, arg1: option::Option<u64>) {
         abort 0
     }
 
-    public(friend) fun update_snapshot<T0>(arg0: &mut Bucket<T0>) {
+    public(package) fun update_snapshot<T0>(arg0: &mut Bucket<T0>) {
         abort 0
     }
 
-    public(friend) fun withdraw_surplus_collateral<T0>(arg0: &mut Bucket<T0>, arg1: address) : balance::Balance<T0> {
+    public(package) fun withdraw_surplus_collateral<T0>(arg0: &mut Bucket<T0>, arg1: address) : balance::Balance<T0> {
         abort 0
     }
 }

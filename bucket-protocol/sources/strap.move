@@ -1,4 +1,4 @@
-module v1_interface::strap {
+module bucket_protocol::strap {
 
     // ----- Use Statements -----
 
@@ -6,14 +6,14 @@ module v1_interface::strap {
     use std::option;
     use sui::tx_context;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct BottleStrap<phantom T0> has store, key {
+    public struct BottleStrap<phantom T0> has store, key {
         id: object::UID,
         fee_rate: option::Option<u64>,
     }
 
-    struct STRAP has drop {
+    public struct STRAP has drop {
         dummy_field: bool,
     }
     // ----- Public Functions -----
@@ -30,11 +30,11 @@ module v1_interface::strap {
         abort 0
     }
 
-    public(friend) fun destroy<T0>(arg0: BottleStrap<T0>) {
+    public(package) fun destroy<T0>(arg0: BottleStrap<T0>) {
         abort 0
     }
 
-    public(friend) fun new_with_fee_rate<T0>(arg0: u64, arg1: &mut tx_context::TxContext) : BottleStrap<T0> {
+    public(package) fun new_with_fee_rate<T0>(arg0: u64, arg1: &mut tx_context::TxContext) : BottleStrap<T0> {
         abort 0
     }
 }

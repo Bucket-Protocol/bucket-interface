@@ -1,4 +1,4 @@
-module v1_interface::constants {
+module bucket_protocol::constants {
     // ----- Public Functions -----
 
     public fun buck_decimal() : u8 {

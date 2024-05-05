@@ -1,4 +1,4 @@
-module v1_interface::reservoir {
+module bucket_protocol::reservoir {
 
     // ----- Use Statements -----
 
@@ -6,9 +6,9 @@ module v1_interface::reservoir {
     use sui::balance;
     use sui::tx_context;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct Reservoir<phantom T0> has store, key {
+    public struct Reservoir<phantom T0> has store, key {
         id: object::UID,
         conversion_rate: u64,
         charge_fee_rate: u64,
@@ -34,19 +34,19 @@ module v1_interface::reservoir {
         abort 0
     }
 
-    public(friend) fun handle_charge<T0>(arg0: &mut Reservoir<T0>, arg1: balance::Balance<T0>) : u64 {
+    public(package) fun handle_charge<T0>(arg0: &mut Reservoir<T0>, arg1: balance::Balance<T0>) : u64 {
         abort 0
     }
 
-    public(friend) fun handle_discharge<T0>(arg0: &mut Reservoir<T0>, arg1: u64) : balance::Balance<T0> {
+    public(package) fun handle_discharge<T0>(arg0: &mut Reservoir<T0>, arg1: u64) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun new<T0>(arg0: u64, arg1: u64, arg2: u64, arg3: &mut tx_context::TxContext) : Reservoir<T0> {
+    public(package) fun new<T0>(arg0: u64, arg1: u64, arg2: u64, arg3: &mut tx_context::TxContext) : Reservoir<T0> {
         abort 0
     }
 
-    public(friend) fun update_fee_rate<T0>(arg0: &mut Reservoir<T0>, arg1: u64, arg2: u64) {
+    public(package) fun update_fee_rate<T0>(arg0: &mut Reservoir<T0>, arg1: u64, arg2: u64) {
         abort 0
     }
 }

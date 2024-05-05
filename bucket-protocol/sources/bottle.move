@@ -1,18 +1,18 @@
-module v1_interface::bottle {
+module bucket_protocol::bottle {
 
     // ----- Use Statements -----
 
     use sui::object;
-    use 0xdb9a10bb9536ab367b7d1ffa404c1d6c55f009076df1139dc108dd86608bbe::linked_table;
+    use bucket_framework::linked_table;
     use std::option;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
+    use bucket_protocol::interest;
     use sui::clock;
     use sui::tx_context;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
+    use bucket_oracle::bucket_oracle;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct Bottle has store, key {
+    public struct Bottle has store, key {
         id: object::UID,
         collateral_amount: u64,
         buck_amount: u64,
@@ -21,7 +21,7 @@ module v1_interface::bottle {
         reward_debt_snapshot: u128,
     }
 
-    struct BottleTable has store, key {
+    public struct BottleTable has store, key {
         id: object::UID,
         table: linked_table::LinkedTable<address, Bottle>,
         total_stake: u64,
@@ -122,87 +122,87 @@ module v1_interface::bottle {
         abort 0
     }
 
-    public(friend) fun add_interest_index_to_bottle(arg0: &mut Bottle, arg1: u256, arg2: &mut tx_context::TxContext) {
+    public(package) fun add_interest_index_to_bottle(arg0: &mut Bottle, arg1: u256, arg2: &mut tx_context::TxContext) {
         abort 0
     }
 
-    public(friend) fun borrow_bottle_mut(arg0: &mut BottleTable, arg1: address) : &mut Bottle {
+    public(package) fun borrow_bottle_mut(arg0: &mut BottleTable, arg1: address) : &mut Bottle {
         abort 0
     }
 
-    public(friend) fun borrow_interest_index_mut(arg0: &mut Bottle) : &mut interest::BottleInterestIndex {
+    public(package) fun borrow_interest_index_mut(arg0: &mut Bottle) : &mut interest::BottleInterestIndex {
         abort 0
     }
 
-    public(friend) fun destroy_surplus_bottle(arg0: Bottle) : u64 {
+    public(package) fun destroy_surplus_bottle(arg0: Bottle) : u64 {
         abort 0
     }
 
-    public(friend) fun get_bottle_info_after_update(arg0: &mut BottleTable, arg1: address) : (u64, u64) {
+    public(package) fun get_bottle_info_after_update(arg0: &mut BottleTable, arg1: address) : (u64, u64) {
         abort 0
     }
 
-    public(friend) fun insert(arg0: &mut BottleTable, arg1: address, arg2: Bottle, arg3: option::Option<address>) {
+    public(package) fun insert(arg0: &mut BottleTable, arg1: address, arg2: Bottle, arg3: option::Option<address>) {
         abort 0
     }
 
-    public(friend) fun insert_bottle(arg0: &mut BottleTable, arg1: &interest::InterestTable, arg2: address, arg3: Bottle, arg4: option::Option<address>, arg5: &clock::Clock) {
+    public(package) fun insert_bottle(arg0: &mut BottleTable, arg1: &interest::InterestTable, arg2: address, arg3: Bottle, arg4: option::Option<address>, arg5: &clock::Clock) {
         abort 0
     }
 
-    public(friend) fun new(arg0: &BottleTable, arg1: &mut tx_context::TxContext) : Bottle {
+    public(package) fun new(arg0: &BottleTable, arg1: &mut tx_context::TxContext) : Bottle {
         abort 0
     }
 
-    public(friend) fun new_table(arg0: &mut tx_context::TxContext) : BottleTable {
+    public(package) fun new_table(arg0: &mut tx_context::TxContext) : BottleTable {
         abort 0
     }
 
-    public(friend) fun pop_front(arg0: &mut BottleTable) : (address, Bottle) {
+    public(package) fun pop_front(arg0: &mut BottleTable) : (address, Bottle) {
         abort 0
     }
 
-    public(friend) fun record_borrow(arg0: &mut Bottle, arg1: u64, arg2: u64, arg3: u64) {
+    public(package) fun record_borrow(arg0: &mut Bottle, arg1: u64, arg2: u64, arg3: u64) {
         abort 0
     }
 
-    public(friend) fun record_redeem(arg0: &mut Bottle, arg1: u64, arg2: u64) {
+    public(package) fun record_redeem(arg0: &mut Bottle, arg1: u64, arg2: u64) {
         abort 0
     }
 
-    public(friend) fun record_redistribution(arg0: &mut BottleTable, arg1: u64, arg2: u64, arg3: address) {
+    public(package) fun record_redistribution(arg0: &mut BottleTable, arg1: u64, arg2: u64, arg3: address) {
         abort 0
     }
 
-    public(friend) fun record_repay(arg0: &mut Bottle, arg1: u64, arg2: u64, arg3: bool) : (bool, u64) {
+    public(package) fun record_repay(arg0: &mut Bottle, arg1: u64, arg2: u64, arg3: bool) : (bool, u64) {
         abort 0
     }
 
-    public(friend) fun record_repay_capped<T0>(arg0: &mut Bottle, arg1: u64, arg2: &bucket_oracle::BucketOracle, arg3: &clock::Clock, arg4: u64, arg5: u8) : (bool, u64) {
+    public(package) fun record_repay_capped<T0>(arg0: &mut Bottle, arg1: u64, arg2: &bucket_oracle::BucketOracle, arg3: &clock::Clock, arg4: u64, arg5: u8) : (bool, u64) {
         abort 0
     }
 
-    public(friend) fun record_top_up(arg0: &mut Bottle, arg1: u64) {
+    public(package) fun record_top_up(arg0: &mut Bottle, arg1: u64) {
         abort 0
     }
 
-    public(friend) fun record_withdraw(arg0: &mut Bottle, arg1: u64) {
+    public(package) fun record_withdraw(arg0: &mut Bottle, arg1: u64) {
         abort 0
     }
 
-    public(friend) fun remove_bottle(arg0: &mut BottleTable, arg1: address) : Bottle {
+    public(package) fun remove_bottle(arg0: &mut BottleTable, arg1: address) : Bottle {
         abort 0
     }
 
-    public(friend) fun remove_bottle_stake(arg0: &mut BottleTable, arg1: address) {
+    public(package) fun remove_bottle_stake(arg0: &mut BottleTable, arg1: address) {
         abort 0
     }
 
-    public(friend) fun update_bottle_debt_and_interest_index(arg0: &mut Bottle, arg1: u64, arg2: u256) {
+    public(package) fun update_bottle_debt_and_interest_index(arg0: &mut Bottle, arg1: u64, arg2: u256) {
         abort 0
     }
 
-    public(friend) fun update_snapshot(arg0: &mut BottleTable, arg1: u64) {
+    public(package) fun update_snapshot(arg0: &mut BottleTable, arg1: u64) {
         abort 0
     }
 }

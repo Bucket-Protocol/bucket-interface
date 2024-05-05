@@ -1,74 +1,74 @@
-module v1_interface::buck {
+module bucket_protocol::buck {
 
     // ----- Use Statements -----
 
     use sui::object;
     use sui::coin;
     use sui::tx_context;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bucket;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::reservoir;
+    use bucket_protocol::bucket;
+    use bucket_protocol::reservoir;
     use sui::balance;
     use std::option;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::well;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
+    use bucket_protocol::well;
+    use bucket_oracle::bucket_oracle;
     use sui::clock;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::tank;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
-    use 0x1798f84ee72176114ddbf5525a6d964c5f8ea1b3738d08d50d0d3de4cf584884::sbuck;
+    use bucket_protocol::tank;
+    use bucket_protocol::bkt;
+    use bucket_protocol::strap;
+    use flask::sbuck;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct AdminCap has store, key {
+    public struct AdminCap has store, key {
         id: object::UID,
     }
 
-    struct BUCK has drop {
+    public struct BUCK has drop {
         dummy_field: bool,
     }
 
-    struct BucketProtocol has key {
+    public struct BucketProtocol has key {
         id: object::UID,
         version: u64,
         buck_treasury_cap: coin::TreasuryCap<BUCK>,
         min_bottle_size: u64,
     }
 
-    struct BucketType<phantom T0> has copy, drop, store {
+    public struct BucketType<phantom T0> has copy, drop, store {
         dummy_field: bool,
     }
 
-    struct FlashMintConfig has store, key {
+    public struct FlashMintConfig has store, key {
         id: object::UID,
         fee_rate: u64,
         max_amount: u64,
         total_amount: u64,
     }
 
-    struct FlashMintReceipt {
+    public struct FlashMintReceipt {
         config_id: object::ID,
         mint_amount: u64,
         fee_amount: u64,
     }
 
-    struct NoFeePermission has key {
+    public struct NoFeePermission has key {
         id: object::UID,
     }
 
-    struct ReservoirType<phantom T0> has copy, drop, store {
+    public struct ReservoirType<phantom T0> has copy, drop, store {
         dummy_field: bool,
     }
 
-    struct TankType<phantom T0> has copy, drop, store {
+    public struct TankType<phantom T0> has copy, drop, store {
         dummy_field: bool,
     }
 
-    struct TestVersion has store, key {
+    public struct TestVersion has store, key {
         id: object::UID,
         version: u64,
     }
 
-    struct WellType<phantom T0> has copy, drop, store {
+    public struct WellType<phantom T0> has copy, drop, store {
         dummy_field: bool,
     }
     // ----- Public Functions -----

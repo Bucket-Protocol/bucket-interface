@@ -1,16 +1,16 @@
-module v1_interface::tank {
+module bucket_protocol::tank {
 
     // ----- Use Statements -----
 
     use sui::object;
     use sui::balance;
     use sui::table;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
+    use bucket_protocol::bkt;
     use sui::tx_context;
 
-    // ----- Structs -----
+    // ----- public structs -----
 
-    struct ContributorToken<phantom T0, phantom T1> has store, key {
+    public struct ContributorToken<phantom T0, phantom T1> has store, key {
         id: object::UID,
         deposit_amount: u64,
         start_p: u64,
@@ -21,21 +21,21 @@ module v1_interface::tank {
         ctx_epoch: u64,
     }
 
-    struct EpochAndScale has copy, drop, store {
+    public struct EpochAndScale has copy, drop, store {
         epoch: u64,
         scale: u64,
     }
 
-    struct FlashReceipt<phantom T0, phantom T1> {
+    public struct FlashReceipt<phantom T0, phantom T1> {
         amount: u64,
         fee: u64,
     }
 
-    struct TANK has drop {
+    public struct TANK has drop {
         dummy_field: bool,
     }
 
-    struct Tank<phantom T0, phantom T1> has store, key {
+    public struct Tank<phantom T0, phantom T1> has store, key {
         id: object::UID,
         reserve: balance::Balance<T0>,
         collateral_pool: balance::Balance<T1>,
@@ -133,27 +133,27 @@ module v1_interface::tank {
         abort 0
     }
 
-    public(friend) fun absorb<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<T1>, arg2: u64) : balance::Balance<T0> {
+    public(package) fun absorb<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<T1>, arg2: u64) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun collect_bkt<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<bkt::BKT>) {
+    public(package) fun collect_bkt<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<bkt::BKT>) {
         abort 0
     }
 
-    public(friend) fun handle_flash_borrow<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: u64) : (balance::Balance<T0>, FlashReceipt<T0, T1>) {
+    public(package) fun handle_flash_borrow<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: u64) : (balance::Balance<T0>, FlashReceipt<T0, T1>) {
         abort 0
     }
 
-    public(friend) fun handle_flash_repay<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<T0>, arg2: FlashReceipt<T0, T1>) : balance::Balance<T0> {
+    public(package) fun handle_flash_repay<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<T0>, arg2: FlashReceipt<T0, T1>) : balance::Balance<T0> {
         abort 0
     }
 
-    public(friend) fun new<T0, T1>(arg0: &mut tx_context::TxContext) : Tank<T0, T1> {
+    public(package) fun new<T0, T1>(arg0: &mut tx_context::TxContext) : Tank<T0, T1> {
         abort 0
     }
 
-    public(friend) fun withdraw<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: &mut bkt::BktTreasury, arg2: ContributorToken<T0, T1>, arg3: &tx_context::TxContext) : (balance::Balance<T0>, balance::Balance<T1>, balance::Balance<bkt::BKT>) {
+    public(package) fun withdraw<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: &mut bkt::BktTreasury, arg2: ContributorToken<T0, T1>, arg3: &tx_context::TxContext) : (balance::Balance<T0>, balance::Balance<T1>, balance::Balance<bkt::BKT>) {
         abort 0
     }
 }
