@@ -1,4 +1,4 @@
-module v1_core_interface::reservoir_events {
+module v1_interface::reservoir_events {
 
     // ----- Structs -----
 

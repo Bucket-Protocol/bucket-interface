@@ -1,4 +1,4 @@
-module v1_core_interface::bottle {
+module v1_interface::bottle {
 
     // ----- Use Statements -----
 

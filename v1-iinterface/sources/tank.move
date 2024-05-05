@@ -1,4 +1,4 @@
-module v1_core_interface::tank {
+module v1_interface::tank {
 
     // ----- Use Statements -----
 

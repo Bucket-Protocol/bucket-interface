@@ -1,4 +1,4 @@
-module v1_core_interface::interest {
+module v1_interface::interest {
 
     // ----- Use Statements -----
 

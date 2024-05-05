@@ -1,4 +1,4 @@
-module v1_core_interface::bkt {
+module v1_interface::bkt {
 
     // ----- Use Statements -----
 

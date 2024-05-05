@@ -1,4 +1,4 @@
-module v1_core_interface::bucket {
+module v1_interface::bucket {
 
     // ----- Use Statements -----
 

@@ -1,4 +1,4 @@
-module v1_core_interface::well_events {
+module v1_interface::well_events {
 
     // ----- Use Statements -----
 

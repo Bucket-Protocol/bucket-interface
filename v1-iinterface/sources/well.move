@@ -1,4 +1,4 @@
-module v1_core_interface::well {
+module v1_interface::well {
 
     // ----- Use Statements -----
 

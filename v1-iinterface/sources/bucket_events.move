@@ -1,4 +1,4 @@
-module v1_core_interface::bucket_events {
+module v1_interface::bucket_events {
 
     // ----- Use Statements -----
 

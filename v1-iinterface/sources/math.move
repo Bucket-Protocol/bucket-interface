@@ -1,4 +1,4 @@
-module v1_core_interface::math {
+module v1_interface::math {
     // ----- Public Functions -----
 
     public fun checked_mul(arg0: u256, arg1: u256) : u256 {

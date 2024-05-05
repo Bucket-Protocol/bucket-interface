@@ -1,4 +1,4 @@
-module v1_core_interface::tank_events {
+module v1_interface::tank_events {
 
     // ----- Use Statements -----
 

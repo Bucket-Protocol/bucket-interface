@@ -1,4 +1,4 @@
-module v1_core_interface::buck {
+module v1_interface::buck {
 
     // ----- Use Statements -----
 

@@ -1,4 +1,4 @@
-module v1_core_interface::constants {
+module v1_interface::constants {
     // ----- Public Functions -----
 
     public fun buck_decimal() : u8 {

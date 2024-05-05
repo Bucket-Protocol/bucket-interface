@@ -1,4 +1,4 @@
-module v1_core_interface::buck_events {
+module v1_interface::buck_events {
 
     // ----- Use Statements -----
 

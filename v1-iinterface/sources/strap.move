@@ -1,4 +1,4 @@
-module v1_core_interface::strap {
+module v1_interface::strap {
 
     // ----- Use Statements -----
 

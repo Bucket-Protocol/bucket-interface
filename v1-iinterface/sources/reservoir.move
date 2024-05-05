@@ -1,4 +1,4 @@
-module v1_core_interface::reservoir {
+module v1_interface::reservoir {
 
     // ----- Use Statements -----
 
