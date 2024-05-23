@@ -22,7 +22,7 @@ Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "f
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_protocol = "0xae5f248cacff46bc1ff9a2b0049963ad320b4d05a3d8b5dc3833e77c85cb6600"
+bucket_protocol = "0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2"
 
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
