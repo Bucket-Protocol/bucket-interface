@@ -1,7 +1,10 @@
 [package]
 name = "BucketProtocol"
 edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
-published-at = "0xae5f248cacff46bc1ff9a2b0049963ad320b4d05a3d8b5dc3833e77c85cb6600"
+version = "0.5.1"
+# published-at = "0xae5f248cacff46bc1ff9a2b0049963ad320b4d05a3d8b5dc3833e77c85cb6600"
+# published-at = "0x8573a39b0d5f21d7e0bbee317851c3ac27536d3649426735493e890805034274"
+published-at = "0x0c592cdefe5ad2d062b128b6a097983e9c40a742c50abb867a5821714a628457"
 # license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
