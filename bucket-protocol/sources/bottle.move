@@ -8,7 +8,6 @@ module bucket_protocol::bottle {
     use bucket_protocol::interest;
     use sui::clock;
     use sui::tx_context;
-    use bucket_oracle::bucket_oracle;
 
     // ----- public structs -----
 
@@ -175,10 +174,6 @@ module bucket_protocol::bottle {
     }
 
     public(package) fun record_repay(arg0: &mut Bottle, arg1: u64, arg2: u64, arg3: bool) : (bool, u64) {
-        abort 0
-    }
-
-    public(package) fun record_repay_capped<T0>(arg0: &mut Bottle, arg1: u64, arg2: &bucket_oracle::BucketOracle, arg3: &clock::Clock, arg4: u64, arg5: u8) : (bool, u64) {
         abort 0
     }
 

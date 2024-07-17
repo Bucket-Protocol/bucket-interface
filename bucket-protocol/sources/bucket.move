@@ -3,16 +3,13 @@ module bucket_protocol::bucket {
     // ----- Use Statements -----
 
     use sui::object;
+    use sui::clock;
     use std::option;
     use sui::balance;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bottle;
     use sui::table;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
-    use sui::clock;
-    use sui::tx_context;
-
     // ----- public structs -----
 
     public struct Bucket<phantom T0> has store, key {
@@ -78,10 +75,6 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public fun get_bottle_icr<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : u64 {
-        abort 0
-    }
-
     public fun get_bottle_info<T0>(arg0: &Bucket<T0>, arg1: &bottle::Bottle) : (u64, u64) {
         abort 0
     }
@@ -115,10 +108,6 @@ module bucket_protocol::bucket {
     }
 
     public fun get_bucket_size<T0>(arg0: &Bucket<T0>) : u64 {
-        abort 0
-    }
-
-    public fun get_bucket_tcr<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock) : u64 {
         abort 0
     }
 
@@ -170,27 +159,7 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public fun has_liquidatable_bottle<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock) : bool {
-        abort 0
-    }
-
-    public fun is_healthy_bottle<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: &bottle::Bottle) : bool {
-        abort 0
-    }
-
-    public fun is_healthy_bottle_by_debtor<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : bool {
-        abort 0
-    }
-
-    public fun is_in_recovery_mode<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock) : bool {
-        abort 0
-    }
-
     public fun is_interest_table_exists<T0>(arg0: &Bucket<T0>) : bool {
-        abort 0
-    }
-
-    public fun is_liquidatable<T0>(arg0: &Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : bool {
         abort 0
     }
 
@@ -238,19 +207,11 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public(package) fun handle_borrow<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: balance::Balance<T0>, arg5: u64, arg6: option::Option<address>, arg7: u64, arg8: &mut tx_context::TxContext) {
-        abort 0
-    }
-
     public(package) fun handle_flash_borrow<T0>(arg0: &mut Bucket<T0>, arg1: u64) : (balance::Balance<T0>, FlashReceipt<T0>) {
         abort 0
     }
 
     public(package) fun handle_flash_repay<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: FlashReceipt<T0>) : balance::Balance<T0> {
-        abort 0
-    }
-
-    public(package) fun handle_redeem<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: u64, arg4: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 
@@ -262,15 +223,7 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public(package) fun handle_repay_capped<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: &bucket_oracle::BucketOracle, arg4: &clock::Clock) : balance::Balance<T0> {
-        abort 0
-    }
-
     public(package) fun handle_top_up<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>, arg2: address, arg3: option::Option<address>, arg4: &clock::Clock) {
-        abort 0
-    }
-
-    public(package) fun handle_withdraw<T0>(arg0: &mut Bucket<T0>, arg1: &bucket_oracle::BucketOracle, arg2: address, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 

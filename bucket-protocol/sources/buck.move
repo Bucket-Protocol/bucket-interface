@@ -11,7 +11,6 @@ module bucket_protocol::buck {
     use sui::balance;
     use std::option;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::well;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
     use sui::clock;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::tank;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
@@ -110,10 +109,6 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun borrow<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: balance::Balance<T0>, arg4: u64, arg5: option::Option<address>, arg6: &mut tx_context::TxContext) : balance::Balance<BUCK> {
-        abort 0
-    }
-
     public fun borrow_bucket<T0>(arg0: &BucketProtocol) : &bucket::Bucket<T0> {
         abort 0
     }
@@ -139,10 +134,6 @@ module bucket_protocol::buck {
     }
 
     public fun borrow_well_mut<T0>(arg0: &mut BucketProtocol) : &mut well::Well<T0> {
-        abort 0
-    }
-
-    public fun borrow_with_strap<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &strap::BottleStrap<T0>, arg3: &clock::Clock, arg4: balance::Balance<T0>, arg5: u64, arg6: option::Option<address>, arg7: &mut tx_context::TxContext) : balance::Balance<BUCK> {
         abort 0
     }
 
@@ -250,18 +241,6 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun is_liquidatable<T0>(arg0: &BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : bool {
-        abort 0
-    }
-
-    public fun liquidate_under_normal_mode<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : balance::Balance<T0> {
-        abort 0
-    }
-
-    public fun liquidate_under_recovery_mode<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : balance::Balance<T0> {
-        abort 0
-    }
-
     public fun mint_sbuck(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>, arg2: coin::Coin<BUCK>) : balance::Balance<sbuck::SBUCK> {
         abort 0
     }
@@ -275,10 +254,6 @@ module bucket_protocol::buck {
     }
 
     public fun package_version() : u64 {
-        abort 0
-    }
-
-    public fun redeem<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: balance::Balance<BUCK>, arg4: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 
@@ -306,10 +281,6 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun tank_withdraw<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: &mut bkt::BktTreasury, arg4: tank::ContributorToken<BUCK, T0>, arg5: &tx_context::TxContext) : (balance::Balance<BUCK>, balance::Balance<T0>, balance::Balance<bkt::BKT>) {
-        abort 0
-    }
-
     public fun top_up<T0>(arg0: &mut BucketProtocol, arg1: balance::Balance<T0>, arg2: address, arg3: option::Option<address>) {
         abort 0
     }
@@ -326,19 +297,11 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun withdraw<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: u64, arg4: option::Option<address>, arg5: &tx_context::TxContext) : balance::Balance<T0> {
-        abort 0
-    }
-
     public fun withdraw_surplus_collateral<T0>(arg0: &mut BucketProtocol, arg1: &tx_context::TxContext) : balance::Balance<T0> {
         abort 0
     }
 
     public fun withdraw_surplus_with_strap<T0>(arg0: &mut BucketProtocol, arg1: &strap::BottleStrap<T0>) : balance::Balance<T0> {
-        abort 0
-    }
-
-    public fun withdraw_with_strap<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &strap::BottleStrap<T0>, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
 }
