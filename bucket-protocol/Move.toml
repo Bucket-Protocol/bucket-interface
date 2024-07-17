@@ -9,7 +9,7 @@ published-at = "0x0c592cdefe5ad2d062b128b6a097983e9c40a742c50abb867a5821714a6284
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies]
-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
+Sui = { git = "https://github.com/MystenLabs/sui.git", rev = "mainnet", subdir = "crates/sui-framework/packages/sui-framework", override = true }
 BucketFramework = { local = "../framework" }
 Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "flask", rev = "sbuck"}
 # For remote import, use the `{ git = "...", subdir = "...", rev = "..." }`.
