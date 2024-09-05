@@ -30,6 +30,10 @@ module bucket_protocol::bkt {
         abort 0
     }
 
+    public fun withdraw_treasury(arg0: &BktAdminCap, arg1: &mut BktTreasury, arg2: u64) : balance::Balance<BKT> {
+        abort 0
+    }
+
     public(package) fun release_bkt(arg0: &mut BktTreasury, arg1: u64) : balance::Balance<BKT> {
         abort 0
     }

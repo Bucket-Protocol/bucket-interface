@@ -4,7 +4,7 @@ module bucket_protocol::bucket_events {
 
     use std::ascii;
     use sui::object;
-    use bucket_protocol::bottle;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bottle;
 
     // ----- public structs -----
 
