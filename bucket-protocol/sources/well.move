@@ -4,7 +4,7 @@ module bucket_protocol::well {
 
     use sui::object;
     use sui::balance;
-    use bucket_protocol::bkt;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
     use sui::tx_context;
     use sui::clock;
 

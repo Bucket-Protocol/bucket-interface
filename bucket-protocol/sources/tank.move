@@ -5,7 +5,7 @@ module bucket_protocol::tank {
     use sui::object;
     use sui::balance;
     use sui::table;
-    use bucket_protocol::bkt;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
     use sui::tx_context;
 
     // ----- public structs -----
@@ -19,6 +19,10 @@ module bucket_protocol::tank {
         start_epoch: u64,
         start_scale: u64,
         ctx_epoch: u64,
+    }
+
+    public struct DigestKey has copy, drop, store {
+        dummy_field: bool,
     }
 
     public struct EpochAndScale has copy, drop, store {
@@ -62,6 +66,10 @@ module bucket_protocol::tank {
     }
 
     public fun deposit<T0, T1>(arg0: &mut Tank<T0, T1>, arg1: balance::Balance<T0>, arg2: &mut tx_context::TxContext) : ContributorToken<T0, T1> {
+        abort 0
+    }
+
+    public fun err_deposit_and_withdraw_in_same_txn() {
         abort 0
     }
 

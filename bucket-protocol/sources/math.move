@@ -1,5 +1,5 @@
 module bucket_protocol::math {
-    // ----- Public Functions -----
+ // ----- Public Functions -----
 
     public fun checked_mul(arg0: u256, arg1: u256) : u256 {
         abort 0

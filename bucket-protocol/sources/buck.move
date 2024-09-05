@@ -9,8 +9,8 @@ module bucket_protocol::buck {
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::pipe;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::reservoir;
     use sui::balance;
-    use std::option;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::well;
+    use std::option;
     use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
     use sui::clock;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::tank;
@@ -154,6 +154,10 @@ module bucket_protocol::buck {
         abort 0
     }
 
+    public fun charge_reservoir_by_partner<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: balance::Balance<T0>, arg2: T1) : balance::Balance<BUCK> {
+        abort 0
+    }
+
     public fun charge_reservoir_without_fee<T0>(arg0: &NoFeePermission, arg1: &mut BucketProtocol, arg2: balance::Balance<T0>) : balance::Balance<BUCK> {
         abort 0
     }
@@ -195,6 +199,10 @@ module bucket_protocol::buck {
     }
 
     public fun discharge_reservoir<T0>(arg0: &mut BucketProtocol, arg1: balance::Balance<BUCK>) : balance::Balance<T0> {
+        abort 0
+    }
+
+    public fun discharge_reservoir_by_partner<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: balance::Balance<BUCK>, arg2: T1) : balance::Balance<T0> {
         abort 0
     }
 
@@ -299,6 +307,10 @@ module bucket_protocol::buck {
     }
 
     public fun set_interest_rate<T0>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: u256, arg3: &clock::Clock) {
+        abort 0
+    }
+
+    public fun set_reservoir_partner<T0, T1: drop>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: u64, arg3: u64) {
         abort 0
     }
 

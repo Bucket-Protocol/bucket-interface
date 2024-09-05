@@ -254,10 +254,6 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public(package) fun handle_redistribution<T0>(arg0: &mut Bucket<T0>, arg1: address) : (balance::Balance<T0>, balance::Balance<T0>) {
-        abort 0
-    }
-
     public(package) fun handle_repay<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: u64, arg4: bool, arg5: &clock::Clock) : balance::Balance<T0> {
         abort 0
     }
