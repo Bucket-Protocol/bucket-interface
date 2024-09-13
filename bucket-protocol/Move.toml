@@ -18,6 +18,7 @@ published-at = "0x0275217e283b408b60adc2ca5f842df3e59fb71e06ee79f07b4eb989141f91
 [dependencies]
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
 BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet"  }
+# BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "test-only"  }
 BucketFramework = { local = "../framework" }
 Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "flask", rev = "sbuck"}
 # For remote import, use the `{ git = "...", subdir = "...", rev = "..." }`.

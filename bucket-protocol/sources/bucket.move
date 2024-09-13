@@ -9,7 +9,7 @@ module bucket_protocol::bucket {
     use sui::table;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
     use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
-    use 0xf145ee6d09aae034924f80672bc76db2415dfd1b1bed863ac289af9d94e2c4fc::bucket_oracle;
+    use bucket_oracle::bucket_oracle;
     use sui::clock;
     use sui::tx_context;
 
