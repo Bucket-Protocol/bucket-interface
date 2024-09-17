@@ -353,4 +353,30 @@ module bucket_protocol::buck {
     public fun withdraw_with_strap<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &strap::BottleStrap<T0>, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
         abort 0
     }
+
+    public fun interest_amount(
+        _protocol: &BucketProtocol,
+        _flask: &Flask<BUCK>,
+        _clock: &Clock,
+    ): u64 {
+        abort 0
+    }
+
+    public fun buck_to_sbuck(
+        _protocol: &mut BucketProtocol,
+        _flask: &mut Flask<BUCK>,
+        _clock: &Clock,
+        _input: Balance<BUCK>,
+    ): Balance<SBUCK> {
+        abort 0
+    }
+
+    public fun sbuck_to_buck(
+        _protocol: &mut BucketProtocol,
+        _flask: &mut Flask<BUCK>,
+        _clock: &Clock,
+        _input: Balance<SBUCK>,
+    ): Balance<BUCK> {
+        abort 0    
+    }
 }
