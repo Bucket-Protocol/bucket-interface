@@ -367,7 +367,7 @@ module bucket_protocol::buck {
         _flask: &mut sbuck::Flask<BUCK>,
         _clock: &clock::Clock,
         _input: balance::Balance<BUCK>,
-    ): balance::Balance<SBUCK> {
+    ): balance::Balance<sbuck::SBUCK> {
         abort 0
     }
 
@@ -375,7 +375,7 @@ module bucket_protocol::buck {
         _protocol: &mut BucketProtocol,
         _flask: &mut sbuck::Flask<BUCK>,
         _clock: &clock::Clock,
-        _input: balance::Balance<SBUCK>,
+        _input: balance::Balance<sbuck::SBUCK>,
     ): balance::Balance<BUCK> {
         abort 0    
     }
