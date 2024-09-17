@@ -356,27 +356,27 @@ module bucket_protocol::buck {
 
     public fun interest_amount(
         _protocol: &BucketProtocol,
-        _flask: &Flask<BUCK>,
-        _clock: &Clock,
+        _flask: &sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
     ): u64 {
         abort 0
     }
 
     public fun buck_to_sbuck(
         _protocol: &mut BucketProtocol,
-        _flask: &mut Flask<BUCK>,
-        _clock: &Clock,
-        _input: Balance<BUCK>,
-    ): Balance<SBUCK> {
+        _flask: &mut sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
+        _input: balance::Balance<BUCK>,
+    ): balance::Balance<SBUCK> {
         abort 0
     }
 
     public fun sbuck_to_buck(
         _protocol: &mut BucketProtocol,
-        _flask: &mut Flask<BUCK>,
-        _clock: &Clock,
-        _input: Balance<SBUCK>,
-    ): Balance<BUCK> {
+        _flask: &mut sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
+        _input: balance::Balance<SBUCK>,
+    ): balance::Balance<BUCK> {
         abort 0    
     }
 }
