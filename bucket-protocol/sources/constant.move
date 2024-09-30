@@ -1,5 +1,5 @@
 module bucket_protocol::constants {
-    // ----- Public Functions -----
+ // ----- Public Functions -----
 
     public fun buck_decimal() : u8 {
         abort 0
@@ -26,6 +26,10 @@ module bucket_protocol::constants {
     }
 
     public fun interest_precision() : u256 {
+        abort 0
+    }
+
+    public fun liquidation_fee() : u64 {
         abort 0
     }
 

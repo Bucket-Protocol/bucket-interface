@@ -5,17 +5,18 @@ module bucket_protocol::buck {
     use sui::object;
     use sui::coin;
     use sui::tx_context;
-    use bucket_protocol::bucket;
-    use bucket_protocol::reservoir;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bucket;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::pipe;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::reservoir;
     use sui::balance;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::well;
     use std::option;
-    use bucket_protocol::well;
     use bucket_oracle::bucket_oracle;
     use sui::clock;
-    use bucket_protocol::tank;
-    use bucket_protocol::bkt;
-    use bucket_protocol::strap;
-    use flask::sbuck;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::tank;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
+    use 0x1798f84ee72176114ddbf5525a6d964c5f8ea1b3738d08d50d0d3de4cf584884::sbuck;
 
     // ----- public structs -----
 
@@ -117,6 +118,10 @@ module bucket_protocol::buck {
         abort 0
     }
 
+    public fun borrow_pipe<T0, T1: drop>(arg0: &BucketProtocol) : &pipe::Pipe<T0, T1> {
+        abort 0
+    }
+
     public fun borrow_reservoir<T0>(arg0: &BucketProtocol) : &reservoir::Reservoir<T0> {
         abort 0
     }
@@ -149,6 +154,10 @@ module bucket_protocol::buck {
         abort 0
     }
 
+    public fun charge_reservoir_by_partner<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: balance::Balance<T0>, arg2: T1) : balance::Balance<BUCK> {
+        abort 0
+    }
+
     public fun charge_reservoir_without_fee<T0>(arg0: &NoFeePermission, arg1: &mut BucketProtocol, arg2: balance::Balance<T0>) : balance::Balance<BUCK> {
         abort 0
     }
@@ -177,11 +186,23 @@ module bucket_protocol::buck {
         abort 0
     }
 
+    public fun create_pipe<T0, T1: drop>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: &mut tx_context::TxContext) {
+        abort 0
+    }
+
     public fun create_reservoir<T0>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: u64, arg3: u64, arg4: u64, arg5: &mut tx_context::TxContext) {
         abort 0
     }
 
+    public fun destroy_pipe<T0, T1: drop>(arg0: &AdminCap, arg1: &mut BucketProtocol) {
+        abort 0
+    }
+
     public fun discharge_reservoir<T0>(arg0: &mut BucketProtocol, arg1: balance::Balance<BUCK>) : balance::Balance<T0> {
+        abort 0
+    }
+
+    public fun discharge_reservoir_by_partner<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: balance::Balance<BUCK>, arg2: T1) : balance::Balance<T0> {
         abort 0
     }
 
@@ -233,6 +254,10 @@ module bucket_protocol::buck {
         abort 0
     }
 
+    public fun input<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: pipe::InputCarrier<T0, T1>) {
+        abort 0
+    }
+
     public fun is_liquidatable<T0>(arg0: &BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &clock::Clock, arg3: address) : bool {
         abort 0
     }
@@ -250,6 +275,10 @@ module bucket_protocol::buck {
     }
 
     public fun new_strap_with_fee_rate_to<T0>(arg0: &AdminCap, arg1: u64, arg2: address, arg3: &mut tx_context::TxContext) {
+        abort 0
+    }
+
+    public fun output<T0, T1: drop>(arg0: &mut BucketProtocol, arg1: u64) : pipe::OutputCarrier<T0, T1> {
         abort 0
     }
 
@@ -278,6 +307,10 @@ module bucket_protocol::buck {
     }
 
     public fun set_interest_rate<T0>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: u256, arg3: &clock::Clock) {
+        abort 0
+    }
+
+    public fun set_reservoir_partner<T0, T1: drop>(arg0: &AdminCap, arg1: &mut BucketProtocol, arg2: u64, arg3: u64) {
         abort 0
     }
 
@@ -319,5 +352,31 @@ module bucket_protocol::buck {
 
     public fun withdraw_with_strap<T0>(arg0: &mut BucketProtocol, arg1: &bucket_oracle::BucketOracle, arg2: &strap::BottleStrap<T0>, arg3: &clock::Clock, arg4: u64, arg5: option::Option<address>) : balance::Balance<T0> {
         abort 0
+    }
+
+    public fun interest_amount(
+        _protocol: &BucketProtocol,
+        _flask: &sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
+    ): u64 {
+        abort 0
+    }
+
+    public fun buck_to_sbuck(
+        _protocol: &mut BucketProtocol,
+        _flask: &mut sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
+        _input: balance::Balance<BUCK>,
+    ): balance::Balance<sbuck::SBUCK> {
+        abort 0
+    }
+
+    public fun sbuck_to_buck(
+        _protocol: &mut BucketProtocol,
+        _flask: &mut sbuck::Flask<BUCK>,
+        _clock: &clock::Clock,
+        _input: balance::Balance<sbuck::SBUCK>,
+    ): balance::Balance<BUCK> {
+        abort 0    
     }
 }

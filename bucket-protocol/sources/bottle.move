@@ -3,9 +3,9 @@ module bucket_protocol::bottle {
     // ----- Use Statements -----
 
     use sui::object;
-    use bucket_framework::linked_table;
+    use 0xdb9a10bb9536ab367b7d1ffa404c1d6c55f009076df1139dc108dd86608bbe::linked_table;
     use std::option;
-    use bucket_protocol::interest;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
     use sui::clock;
     use sui::tx_context;
     use bucket_oracle::bucket_oracle;

@@ -5,10 +5,10 @@ module bucket_protocol::bucket {
     use sui::object;
     use std::option;
     use sui::balance;
-    use bucket_protocol::bottle;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bottle;
     use sui::table;
-    use bucket_protocol::interest;
-    use bucket_protocol::strap;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
+    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
     use bucket_oracle::bucket_oracle;
     use sui::clock;
     use sui::tx_context;
@@ -33,6 +33,14 @@ module bucket_protocol::bucket {
     public struct FlashReceipt<phantom T0> {
         amount: u64,
         fee: u64,
+    }
+
+    public struct OutputKey has copy, drop, store {
+        dummy_field: bool,
+    }
+
+    public struct OutputVolume has store {
+        volume: u64,
     }
 
     public struct PendingRecord has store, key {
@@ -114,6 +122,10 @@ module bucket_protocol::bucket {
         abort 0
     }
 
+    public fun get_collateral_output_volume<T0>(arg0: &Bucket<T0>) : u64 {
+        abort 0
+    }
+
     public fun get_collateral_vault_balance<T0>(arg0: &Bucket<T0>) : u64 {
         abort 0
     }
@@ -147,6 +159,10 @@ module bucket_protocol::bucket {
     }
 
     public fun get_surplus_collateral_amount<T0>(arg0: &Bucket<T0>, arg1: address) : u64 {
+        abort 0
+    }
+
+    public fun get_total_collateral_balance<T0>(arg0: &Bucket<T0>) : u64 {
         abort 0
     }
 
@@ -238,10 +254,6 @@ module bucket_protocol::bucket {
         abort 0
     }
 
-    public(package) fun handle_redistribution<T0>(arg0: &mut Bucket<T0>, arg1: address) : (balance::Balance<T0>, balance::Balance<T0>) {
-        abort 0
-    }
-
     public(package) fun handle_repay<T0>(arg0: &mut Bucket<T0>, arg1: address, arg2: u64, arg3: u64, arg4: bool, arg5: &clock::Clock) : balance::Balance<T0> {
         abort 0
     }
@@ -258,11 +270,19 @@ module bucket_protocol::bucket {
         abort 0
     }
 
+    public(package) fun input<T0>(arg0: &mut Bucket<T0>, arg1: balance::Balance<T0>) {
+        abort 0
+    }
+
     public(package) fun new<T0>(arg0: u64, arg1: u64, arg2: u8, arg3: option::Option<u64>, arg4: &mut tx_context::TxContext) : Bucket<T0> {
         abort 0
     }
 
     public(package) fun new_pending_record(arg0: &mut tx_context::TxContext) : PendingRecord {
+        abort 0
+    }
+
+    public(package) fun output<T0>(arg0: &mut Bucket<T0>, arg1: u64) : balance::Balance<T0> {
         abort 0
     }
 
