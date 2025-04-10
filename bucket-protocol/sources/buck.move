@@ -379,4 +379,12 @@ module bucket_protocol::buck {
     ): balance::Balance<BUCK> {
         abort 0    
     }
+
+    public fun transfer_bottle<T>(
+        _protocol: &mut BucketProtocol,
+        _clock: &clock::Clock,
+        _new_debtor: address,
+        _ctx: &TxContext,
+    ) {
+    }
 }
