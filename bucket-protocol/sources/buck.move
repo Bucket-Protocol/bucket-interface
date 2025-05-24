@@ -5,18 +5,18 @@ module bucket_protocol::buck {
     use sui::object;
     use sui::coin;
     use sui::tx_context;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bucket;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::pipe;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::reservoir;
+    use bucket_protocol::bucket;
+    use bucket_protocol::pipe;
+    use bucket_protocol::reservoir;
     use sui::balance;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::well;
+    use bucket_protocol::well;
     use std::option;
     use bucket_oracle::bucket_oracle;
     use sui::clock;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::tank;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
-    use 0x1798f84ee72176114ddbf5525a6d964c5f8ea1b3738d08d50d0d3de4cf584884::sbuck;
+    use bucket_protocol::tank;
+    use bucket_protocol::bkt;
+    use bucket_protocol::strap;
+    // use 0x1798f84ee72176114ddbf5525a6d964c5f8ea1b3738d08d50d0d3de4cf584884::sbuck;
 
     // ----- public structs -----
 
@@ -146,9 +146,9 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun burn_sbuck(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>, arg2: coin::Coin<sbuck::SBUCK>) : balance::Balance<BUCK> {
-        abort 0
-    }
+    // public fun burn_sbuck(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>, arg2: coin::Coin<sbuck::SBUCK>) : balance::Balance<BUCK> {
+    //     abort 0
+    // }
 
     public fun charge_reservoir<T0>(arg0: &mut BucketProtocol, arg1: balance::Balance<T0>) : balance::Balance<BUCK> {
         abort 0
@@ -166,9 +166,9 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun collect_interests_to_flask<T0>(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>) {
-        abort 0
-    }
+    // public fun collect_interests_to_flask<T0>(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>) {
+    //     abort 0
+    // }
 
     public fun compute_base_rate_fee<T0>(arg0: &bucket::Bucket<T0>, arg1: &clock::Clock) : u64 {
         abort 0
@@ -270,9 +270,9 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun mint_sbuck(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>, arg2: coin::Coin<BUCK>) : balance::Balance<sbuck::SBUCK> {
-        abort 0
-    }
+    // public fun mint_sbuck(arg0: &mut BucketProtocol, arg1: &mut sbuck::Flask<BUCK>, arg2: coin::Coin<BUCK>) : balance::Balance<sbuck::SBUCK> {
+    //     abort 0
+    // }
 
     public fun new_strap_with_fee_rate_to<T0>(arg0: &AdminCap, arg1: u64, arg2: address, arg3: &mut tx_context::TxContext) {
         abort 0
@@ -354,31 +354,31 @@ module bucket_protocol::buck {
         abort 0
     }
 
-    public fun interest_amount(
-        _protocol: &BucketProtocol,
-        _flask: &sbuck::Flask<BUCK>,
-        _clock: &clock::Clock,
-    ): u64 {
-        abort 0
-    }
+    // public fun interest_amount(
+    //     _protocol: &BucketProtocol,
+    //     _flask: &sbuck::Flask<BUCK>,
+    //     _clock: &clock::Clock,
+    // ): u64 {
+    //     abort 0
+    // }
 
-    public fun buck_to_sbuck(
-        _protocol: &mut BucketProtocol,
-        _flask: &mut sbuck::Flask<BUCK>,
-        _clock: &clock::Clock,
-        _input: balance::Balance<BUCK>,
-    ): balance::Balance<sbuck::SBUCK> {
-        abort 0
-    }
+    // public fun buck_to_sbuck(
+    //     _protocol: &mut BucketProtocol,
+    //     _flask: &mut sbuck::Flask<BUCK>,
+    //     _clock: &clock::Clock,
+    //     _input: balance::Balance<BUCK>,
+    // ): balance::Balance<sbuck::SBUCK> {
+    //     abort 0
+    // }
 
-    public fun sbuck_to_buck(
-        _protocol: &mut BucketProtocol,
-        _flask: &mut sbuck::Flask<BUCK>,
-        _clock: &clock::Clock,
-        _input: balance::Balance<sbuck::SBUCK>,
-    ): balance::Balance<BUCK> {
-        abort 0    
-    }
+    // public fun sbuck_to_buck(
+    //     _protocol: &mut BucketProtocol,
+    //     _flask: &mut sbuck::Flask<BUCK>,
+    //     _clock: &clock::Clock,
+    //     _input: balance::Balance<sbuck::SBUCK>,
+    // ): balance::Balance<BUCK> {
+    //     abort 0    
+    // }
 
     public fun transfer_bottle<T>(
         _protocol: &mut BucketProtocol,

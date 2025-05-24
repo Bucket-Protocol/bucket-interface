@@ -5,10 +5,10 @@ module bucket_protocol::bucket {
     use sui::object;
     use std::option;
     use sui::balance;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bottle;
+    use bucket_protocol::bottle;
     use sui::table;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::interest;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::strap;
+    use bucket_protocol::interest;
+    use bucket_protocol::strap;
     use bucket_oracle::bucket_oracle;
     use sui::clock;
     use sui::tx_context;

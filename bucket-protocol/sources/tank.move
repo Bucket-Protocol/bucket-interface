@@ -5,7 +5,7 @@ module bucket_protocol::tank {
     use sui::object;
     use sui::balance;
     use sui::table;
-    use 0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2::bkt;
+    use bucket_protocol::bkt;
     use sui::tx_context;
 
     // ----- public structs -----

@@ -2,14 +2,12 @@
 
 [move]
 version = 3
-manifest_digest = "D421CE0949E54B6FEF60E4E06588361B765939FEB43753935534419C9FFB0E37"
-deps_digest = "04732BFEF428F74DE262001DC455D76B909EBC394B034A9A15CC095E4BDD9CEF"
+manifest_digest = "1DDA4063816D5A6EC986CA8439B49964E9657FE802C975076D935EF66E10DDBC"
+deps_digest = "52B406A7A21811BEF51751CF88DA0E76DAEFFEAC888D4F4060B1A72BBE7D8D35"
 dependencies = [
   { id = "Bridge", name = "Bridge" },
   { id = "BucketFramework", name = "BucketFramework" },
   { id = "BucketOracle", name = "BucketOracle" },
-  { id = "DeepBook", name = "DeepBook" },
-  { id = "Flask", name = "Flask" },
   { id = "MoveStdlib", name = "MoveStdlib" },
   { id = "Sui", name = "Sui" },
   { id = "SuiSystem", name = "SuiSystem" },
@@ -17,7 +15,7 @@ dependencies = [
 
 [[move.package]]
 id = "Bridge"
-source = { git = "https://github.com/MystenLabs/sui.git", rev = "04f11afaf5e0", subdir = "crates/sui-framework/packages/bridge" }
+source = { git = "https://github.com/MystenLabs/sui.git", rev = "6a2fc3c8f555", subdir = "crates/sui-framework/packages/bridge" }
 
 dependencies = [
   { id = "MoveStdlib", name = "MoveStdlib" },
@@ -35,27 +33,7 @@ dependencies = [
 
 [[move.package]]
 id = "BucketOracle"
-source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet", subdir = "" }
-
-dependencies = [
-  { id = "Pyth", name = "Pyth" },
-  { id = "Sui", name = "Sui" },
-  { id = "SupraOracle", name = "SupraOracle" },
-  { id = "SwitchboardStdLib", name = "SwitchboardStdLib" },
-]
-
-[[move.package]]
-id = "DeepBook"
-source = { git = "https://github.com/MystenLabs/sui.git", rev = "04f11afaf5e0", subdir = "crates/sui-framework/packages/deepbook" }
-
-dependencies = [
-  { id = "MoveStdlib", name = "MoveStdlib" },
-  { id = "Sui", name = "Sui" },
-]
-
-[[move.package]]
-id = "Flask"
-source = { git = "https://github.com/Sparkling-Finance/contract.git", rev = "main", subdir = "flask" }
+source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "testnet-v2", subdir = "" }
 
 dependencies = [
   { id = "Sui", name = "Sui" },
@@ -63,20 +41,11 @@ dependencies = [
 
 [[move.package]]
 id = "MoveStdlib"
-source = { git = "https://github.com/MystenLabs/sui.git", rev = "04f11afaf5e0", subdir = "crates/sui-framework/packages/move-stdlib" }
-
-[[move.package]]
-id = "Pyth"
-source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet", subdir = "partners/pyth" }
-
-dependencies = [
-  { id = "Sui", name = "Sui" },
-  { id = "Wormhole", name = "Wormhole" },
-]
+source = { git = "https://github.com/MystenLabs/sui.git", rev = "6a2fc3c8f555", subdir = "crates/sui-framework/packages/move-stdlib" }
 
 [[move.package]]
 id = "Sui"
-source = { git = "https://github.com/MystenLabs/sui.git", rev = "04f11afaf5e0", subdir = "crates/sui-framework/packages/sui-framework" }
+source = { git = "https://github.com/MystenLabs/sui.git", rev = "6a2fc3c8f555", subdir = "crates/sui-framework/packages/sui-framework" }
 
 dependencies = [
   { id = "MoveStdlib", name = "MoveStdlib" },
@@ -84,40 +53,15 @@ dependencies = [
 
 [[move.package]]
 id = "SuiSystem"
-source = { git = "https://github.com/MystenLabs/sui.git", rev = "04f11afaf5e0", subdir = "crates/sui-framework/packages/sui-system" }
+source = { git = "https://github.com/MystenLabs/sui.git", rev = "6a2fc3c8f555", subdir = "crates/sui-framework/packages/sui-system" }
 
 dependencies = [
   { id = "MoveStdlib", name = "MoveStdlib" },
-  { id = "Sui", name = "Sui" },
-]
-
-[[move.package]]
-id = "SupraOracle"
-source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet", subdir = "partners/supra" }
-
-dependencies = [
-  { id = "Sui", name = "Sui" },
-]
-
-[[move.package]]
-id = "SwitchboardStdLib"
-source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet", subdir = "partners/switchboard" }
-
-dependencies = [
-  { id = "MoveStdlib", name = "MoveStdlib" },
-  { id = "Sui", name = "Sui" },
-]
-
-[[move.package]]
-id = "Wormhole"
-source = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet", subdir = "partners/pyth/wormhole" }
-
-dependencies = [
   { id = "Sui", name = "Sui" },
 ]
 
 [move.toolchain-version]
-compiler-version = "1.46.0"
+compiler-version = "1.48.1"
 edition = "2024.beta"
 flavor = "sui"
 

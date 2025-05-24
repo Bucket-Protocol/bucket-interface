@@ -2,15 +2,15 @@
 name = "BucketProtocol"
 edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
 version = "0.7.0"
-published-at = "0x0b6ba9889bb71abc5fa89e4ad5db12e63bc331dba858019dd8d701bc91184d79"
+published-at = "0x582bb418e929c5005efdfedb725a1c03b09c258713f9e701640fe875c664ac81"
 # license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies]
-BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet"  }
+BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "testnet-v2"  }
 # BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "test-only"  }
 BucketFramework = { local = "../framework" }
-Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "flask", rev = "main"}
+# Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "flask", rev = "testnet-v2"}
 # For remote import, use the `{ git = "...", subdir = "...", rev = "..." }`.
 # Revision can be a branch, a tag, and a commit hash.
 # MyRemotePackage = { git = "https://some.remote/host.git", subdir = "remote/path", rev = "main" }
@@ -23,7 +23,7 @@ Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "f
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_protocol = "0xce7ff77a83ea0cb6fd39bd8748e2ec89a3f41e8efdc3f4eb123e0ca37b184db2"
+bucket_protocol = "0x3f51e0ddc7638ee85858d237236f17fddba8d305313d5e257ee7382d6677adcf"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.
