@@ -1,0 +1,5 @@
+.coverage_map.mvcov
+.trace
+.env
+node_modules/
+.DS_Store
