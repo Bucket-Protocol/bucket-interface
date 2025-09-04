@@ -1,12 +1,10 @@
 [package]
-name = "BucketV2PSM"
-edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
+name = "BucketV2Framework"
+edition = "2024.beta"      # edition = "legacy" to use legacy (pre-2024) Move
 # license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies]
-BucketV2USD = { local = "../bucket_usd" }
-BucketV2Oracle = { local = "../bucket_oracle" }
 
 # For remote import, use the `{ git = "...", subdir = "...", rev = "..." }`.
 # Revision can be a branch, a tag, and a commit hash.
@@ -20,7 +18,7 @@ BucketV2Oracle = { local = "../bucket_oracle" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_psm = "0xc2ae6693383e4a81285136effc8190c7baaf0e75aafa36d1c69cd2170cfc3803"
+bucket_v2_framework = "0x070e683f4dac417906f42fee9a175b19120855ae37444cba84041d7f37b27f63"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.
