@@ -19,7 +19,7 @@ BucketV2CDP = { local = "../../bucket_cdp" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_borrow_incentive = "0x8cc2eed1b1012881a623e9bafd58ff0f17a8c5f807662631e623acf7779a78ee"
+bucket_v2_borrow_incentive = "0x00"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

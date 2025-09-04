@@ -18,7 +18,7 @@ BucketV2USD = { local = "../bucket_usd" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_saving = "0x872d08a70db3db498aa7853276acea8091fdd9871b2d86bc8dcb8524526df622"
+bucket_v2_saving = "0xf59c363a3af10f51e69c612c5fa01f6500701254043f057e132cdbd27b67d14f"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

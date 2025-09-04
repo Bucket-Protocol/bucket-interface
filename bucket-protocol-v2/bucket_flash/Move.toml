@@ -18,7 +18,7 @@ BucketV2USD = { local = "../bucket_usd" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_flash = "0x0"
+bucket_v2_flash = "0x68d88be9921bd6730a0f1cdfc200a7e9dda6b3e862c0245cd3891511671bcb8c"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

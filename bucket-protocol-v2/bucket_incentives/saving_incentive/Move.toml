@@ -18,7 +18,7 @@ BucketV2Saving = { local = "../../bucket_saving/" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_saving_incentive = "0x39692320d6fc01c27315a7972ed4717e4fd32eed43531ad6f55fd7f24b74e207"
+bucket_saving_incentive = "0x11e03be85d2b5f1ddef785fe1dfa129551f69913c41324ac0cad116031579588"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

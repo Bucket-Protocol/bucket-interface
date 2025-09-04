@@ -18,7 +18,7 @@ edition = "2024.beta"      # edition = "legacy" to use legacy (pre-2024) Move
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_framework = "0x665188033384920a5bb5dcfb2ef21f54b4568d08b431718b97e02e5c184b92cc"
+bucket_v2_framework = "0x070e683f4dac417906f42fee9a175b19120855ae37444cba84041d7f37b27f63"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

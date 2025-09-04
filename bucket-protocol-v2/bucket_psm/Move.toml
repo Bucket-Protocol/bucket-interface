@@ -20,7 +20,7 @@ BucketV2Oracle = { local = "../bucket_oracle" }
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-bucket_v2_psm = "0xc2ae6693383e4a81285136effc8190c7baaf0e75aafa36d1c69cd2170cfc3803"
+bucket_v2_psm = "0xb818b22a88d614c266c5f4436fb4447dee1c4fba8071c456f864851eb6dd194d"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.
