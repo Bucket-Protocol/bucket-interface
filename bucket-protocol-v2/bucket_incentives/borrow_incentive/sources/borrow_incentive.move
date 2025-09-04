@@ -88,7 +88,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
     /// Init
 
     fun init(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// Admin Funs
@@ -102,7 +102,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         start_timestamp: u64,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun withdraw_from_source<T, R>(
@@ -114,17 +114,17 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         amount: u64,
         ctx: &mut TxContext,
     ): Coin<R> {
-        abort 0;
+        abort 0
     }
 
     /// Admin Funs
 
     public fun add_version(registry: &mut VaultRewarderRegistry, _cap: &AdminCap, version: u16) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_version(registry: &mut VaultRewarderRegistry, _cap: &AdminCap, version: u16) {
-        abort 0;
+        abort 0
     }
 
     public fun add_manager(
@@ -132,7 +132,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         _cap: &AdminCap,
         manager: address,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_manager(
@@ -140,7 +140,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         _cap: &AdminCap,
         manager: address,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Manager Funs
@@ -154,7 +154,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         flow_interval: u64,
         request: &AccountRequest,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun update_rewarder_timestamp<T, R>(
@@ -165,24 +165,24 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         timestamp: u64,
         request: &AccountRequest,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Public Fun
 
     public fun deposit_to_source<R>(rewarder: &mut VaultRewarder<R>, coin: Coin<R>) {
-        abort 0;
+        abort 0
     }
 
     public fun deposit_to_pool<R>(rewarder: &mut VaultRewarder<R>, coin: Coin<R>) {
-        abort 0;
+        abort 0
     }
 
     public fun new_checker<T>(
         registry: &VaultRewarderRegistry,
         request: UpdateRequest<T>,
     ): RequestChecker<T> {
-        abort 0;
+        abort 0
     }
 
     public fun update<T, R>(
@@ -192,14 +192,14 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         rewarder: &mut VaultRewarder<R>,
         clock: &Clock,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun destroy_checker<T>(
         registry: &VaultRewarderRegistry,
         checker: RequestChecker<T>,
     ): UpdateRequest<T> {
-        abort 0;
+        abort 0
     }
 
     public fun claim<T, R>(
@@ -210,17 +210,17 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         clock: &Clock,
         ctx: &mut TxContext,
     ): Coin<R> {
-        abort 0;
+        abort 0
     }
 
     /// Getter Funs
 
     public fun id<R>(rewarder: &VaultRewarder<R>): ID {
-        abort 0;
+        abort 0
     }
 
     public fun stake_exists<R>(rewarder: &VaultRewarder<R>, account: address): bool {
-        abort 0;
+        abort 0
     }
 
     public fun realtime_reward_amount<T, R>(
@@ -229,7 +229,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         account: address,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Entry Funs
@@ -244,7 +244,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         recipient: address,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     entry fun deposit_to_source_and_set_flow_rate<T, R>(
@@ -256,7 +256,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         flow_interval: u64,
         ctx: &TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     entry fun set_flow_rate<T, R>(
@@ -268,7 +268,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         flow_interval: u64,
         ctx: &TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     entry fun set_rewarder_timestamp<T, R>(
@@ -279,7 +279,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         timestamp: u64,
         ctx: &TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Internal Funs
@@ -289,11 +289,11 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         vault: &Vault<T>,
         clock: &Clock,
     ): (u64, Double, bool) {
-        abort 0;
+        abort 0
     }
 
     fun source_to_pool<T, R>(rewarder: &mut VaultRewarder<R>, vault: &Vault<T>, clock: &Clock) {
-        abort 0;
+        abort 0
     }
 
     fun unsettled_reward_amount<T, R>(
@@ -302,7 +302,7 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         account: address,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     fun settle_reward<T, R>(
@@ -311,29 +311,29 @@ module bucket_v2_borrow_incentive::borrow_incentive {
         account: address,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     fun assert_unchecked_rewarder<T, R>(checker: &RequestChecker<T>, rewarder: &VaultRewarder<R>) {
-        abort 0;
+        abort 0
     }
 
     fun assert_correct_vault<T, R>(rewarder: &VaultRewarder<R>, vault: &Vault<T>) {
-        abort 0;
+        abort 0
     }
 
     fun assert_valid_package_version(registry: &VaultRewarderRegistry) {
-        abort 0;
+        abort 0
     }
 
     fun assert_sender_is_manager(registry: &VaultRewarderRegistry, request: &AccountRequest) {
-        abort 0;
+        abort 0
     }
 
     /// Test-only Funs
 
     #[test_only]
     public fun init_for_testing(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 }

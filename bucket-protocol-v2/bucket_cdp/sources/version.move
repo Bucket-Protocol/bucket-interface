@@ -12,5 +12,5 @@ const PACKAGE_VERSION: u16 = 1;
 public fun package_version(): u16 { PACKAGE_VERSION }
 
 public(package) fun assert_valid_package(treasury: &Treasury) {
-    abort 0;
+    abort 0
 }

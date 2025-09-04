@@ -102,12 +102,12 @@ module bucket_v2_saving::saving {
 
     /// Returns the LP token balance for a specific account
     public fun lp_balance_of<T>(self: &SavingPool<T>, account_address: address): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the last update timestamp for a specific account's position
     public fun last_update<T>(self: &SavingPool<T>, account_address: address): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the current annual saving rate as a Double
@@ -256,23 +256,23 @@ module bucket_v2_saving::saving {
     /// Returns the amount of interest that has accumulated since last distribution
     /// but has not yet been distributed to the pool reserves
     public fun pending_interest<T>(self: &SavingPool<T>, clock: &Clock): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the total reserve amount including current reserves plus accumulated interest
     public fun total_reserve<T>(self: &SavingPool<T>, clock: &Clock): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the current ratio of LP token value to total reserve
     /// Used to calculate how much each LP token is worth in USDB terms
     public fun lp_token_ratio<T>(self: &SavingPool<T>, clock: &Clock): Double {
-        abort 0;
+        abort 0
     }
 
     /// Returns the USDB value for a given amount of LP token shares
     public fun lp_token_value<T>(self: &SavingPool<T>, shares: u64, clock: &Clock): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the total USDB value of LP tokens held by a specific account
@@ -281,17 +281,17 @@ module bucket_v2_saving::saving {
         account_address: address,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Calculates how many LP tokens would be minted for a given USDB deposit amount
     public fun calculate_lp_mint_amount<T>(self: &SavingPool<T>, value: u64, clock: &Clock): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Checks if a position exists for the given account address
     public fun position_exists<T>(self: &SavingPool<T>, account_address: address): bool {
-        abort 0;
+        abort 0
     }
 
     // === Admin Functions ===
@@ -302,12 +302,12 @@ module bucket_v2_saving::saving {
         treasury_cap: TreasuryCap<T>,
         ctx: &mut TxContext,
     ): SavingPool<T> {
-        abort 0;
+        abort 0
     }
 
     #[allow(lint(share_owned))]
     public fun default<T>(cap: &AdminCap, treasury_cap: TreasuryCap<T>, ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// Updates the annual saving interest rate for the pool
@@ -320,7 +320,7 @@ module bucket_v2_saving::saving {
         clock: &Clock,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Updates the maximum deposit cap limit for the pool
@@ -330,13 +330,13 @@ module bucket_v2_saving::saving {
         _cap: &AdminCap,
         deposit_cap_amount: Option<u64>,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Adds a required witness type check for deposit operations
     /// The witness must be provided during deposit response validation
     public fun add_deposit_response_check<T, R: drop>(self: &mut SavingPool<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     /// Removes a witness type check requirement for deposit operations
@@ -344,13 +344,13 @@ module bucket_v2_saving::saving {
         self: &mut SavingPool<T>,
         _cap: &AdminCap,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Adds a required witness type check for withdraw operations
     /// The witness must be provided during withdraw response validation
     public fun add_withdraw_response_check<T, R: drop>(self: &mut SavingPool<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     /// Removes a witness type check requirement for withdraw operations
@@ -358,7 +358,7 @@ module bucket_v2_saving::saving {
         self: &mut SavingPool<T>,
         _cap: &AdminCap,
     ) {
-        abort 0;
+        abort 0
     }
 
     // === Public Functions ===
@@ -369,7 +369,7 @@ module bucket_v2_saving::saving {
         self: &mut SavingPool<T>,
         treasury: &Treasury,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Validates and consumes a withdraw response hot potato
@@ -379,19 +379,19 @@ module bucket_v2_saving::saving {
         self: &mut SavingPool<T>,
         treasury: &Treasury,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Adds a witness proof to the deposit response for validation
     /// Each witness type can only be added once per response
     public fun add_deposit_witness<T, W: drop>(response: &mut DepositResponse<T>, _witness: W) {
-        abort 0;
+        abort 0
     }
 
     /// Adds a witness proof to the withdraw response for validation
     /// Each witness type can only be added once per response
     public fun add_withdraw_witness<T, W: drop>(response: &mut WithdrawResponse<T>, _witness: W) {
-        abort 0;
+        abort 0
     }
 
     /// Deposits USDB into the saving pool and mints LP tokens
@@ -405,7 +405,7 @@ module bucket_v2_saving::saving {
         clock: &Clock,
         ctx: &mut TxContext,
     ): DepositResponse<T> {
-        abort 0;
+        abort 0
     }
 
     /// Withdraws USDB from the saving pool by burning LP tokens
@@ -419,13 +419,13 @@ module bucket_v2_saving::saving {
         clock: &Clock,
         ctx: &mut TxContext,
     ): (Coin<USDB>, WithdrawResponse<T>) {
-        abort 0;
+        abort 0
     }
 
     /// Validates that a deposit won't exceed the pool's deposit cap limit
     /// Only enforced when deposit_cap_amount is set
     fun assert_deposit_cap<T>(self: &SavingPool<T>, clock: &Clock) {
-        abort 0;
+        abort 0
     }
 
     /// Distributes accumulated interest and adds them to pool reserves
@@ -436,18 +436,18 @@ module bucket_v2_saving::saving {
         clock: &Clock,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Internal function to handle USDB deposits and LP token minting
     /// Calculates LP tokens based on current pool ratio
     fun deposit_<T>(self: &mut SavingPool<T>, usdb: Balance<USDB>): Balance<T> {
-        abort 0;
+        abort 0
     }
 
     /// Internal function to handle LP token burning and USDB withdrawal
     /// Calculates withdrawal amount based on current pool ratio
     fun withdraw_<T>(self: &mut SavingPool<T>, lp_balance: Balance<T>): Balance<USDB> {
-        abort 0;
+        abort 0
     }
 }

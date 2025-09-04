@@ -25,14 +25,14 @@ module bucket_v2_cdp::request {
 
     /// Adds a witness type to the request, aborts if already present
     public fun add_witness<T, W: drop>(self: &mut UpdateRequest<T>, _witness: W) {
-        abort 0;
+        abort 0
     }
 
     /// Destroys an UpdateRequest, returning its fields (package visibility)
     public(package) fun destroy<T>(
         self: UpdateRequest<T>,
     ): (ID, address, Coin<T>, u64, Coin<USDB>, u64, VecSet<TypeName>, String) {
-        abort 0;
+        abort 0
     }
 
     /// Getter for vault_id field
@@ -85,6 +85,6 @@ module bucket_v2_cdp::request {
         withdraw_amount: u64,
         memo: String,
     ): UpdateRequest<T> {
-        abort 0;
+        abort 0
     }
 }

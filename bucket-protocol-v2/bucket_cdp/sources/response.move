@@ -29,14 +29,14 @@ public(package) fun new<T>(
     debt_amount: u64,
     interest_amount: u64,
 ): UpdateResponse<T> {
-    abort 0;
+    abort 0
 }
 
 /// Destroys an UpdateResponse, returning its fields as a tuple
 public(package) fun destroy<T>(
     res: UpdateResponse<T>,
 ): (ID, address, u64, u64, u64, VecSet<TypeName>) {
-    abort 0;
+    abort 0
 }
 
 /// Public Functions
@@ -46,7 +46,7 @@ public fun add_witness<T, R: drop>(
     res: &mut UpdateResponse<T>,
     _witness: R, // The witness object (consumed, only type is used)
 ) {
-    abort 0;
+    abort 0
 }
 
 /// Getter Functions

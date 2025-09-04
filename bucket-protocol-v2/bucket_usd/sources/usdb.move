@@ -66,7 +66,7 @@ module bucket_v2_usd::usdb {
 
     /// Initializes the USDB coin and Treasury object
     fun init(otw: USDB, ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// =====================
@@ -88,22 +88,22 @@ module bucket_v2_usd::usdb {
         _cap: &AdminCap,
         supply_limit: u64,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Add a supported version for a module
     public fun add_version<M: drop>(treasury: &mut Treasury, _cap: &AdminCap, version: u16) {
-        abort 0;
+        abort 0
     }
 
     /// Remove a supported version for a module
     public fun remove_version<M: drop>(treasury: &mut Treasury, _cap: &AdminCap, version: u16) {
-        abort 0;
+        abort 0
     }
 
     /// Remove a module and its supply/version records from the Treasury
     public fun remove_module<M: drop>(treasury: &mut Treasury, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     /// =====================
@@ -118,12 +118,12 @@ module bucket_v2_usd::usdb {
         amount: u64,
         ctx: &mut TxContext,
     ): Coin<USDB> {
-        abort 0;
+        abort 0
     }
 
     /// Burn USDB for a module, decreasing its supply
     public fun burn<M: drop>(treasury: &mut Treasury, _witness: M, version: u16, coin: Coin<USDB>) {
-        abort 0;
+        abort 0
     }
 
     /// Collect a balance of any coin type into the Treasury, associated with a module and memo
@@ -133,7 +133,7 @@ module bucket_v2_usd::usdb {
         memo: String,
         balance: Balance<T>,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Claim collected coins for a module, only allowed by the beneficiary
@@ -142,7 +142,7 @@ module bucket_v2_usd::usdb {
         account_req: &AccountRequest,
         ctx: &mut TxContext,
     ): Option<Coin<T>> {
-        abort 0;
+        abort 0
     }
 
     /// =====================
@@ -154,7 +154,7 @@ module bucket_v2_usd::usdb {
 
     /// Returns the total supply of USDB
     public fun total_supply(treasury: &Treasury): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Returns the module supply map
@@ -178,17 +178,17 @@ module bucket_v2_usd::usdb {
     }
 
     public fun is_claimable_map_exists_type<T>(treasury: &Treasury): bool {
-        abort 0;
+        abort 0
     }
 
     /// Returns the claimable map for a given coin type, aborts if not found
     public fun claimable_map<T>(treasury: &Treasury): &VecMap<TypeName, Balance<T>> {
-        abort 0;
+        abort 0
     }
 
     /// Asserts that a module and version are valid and supply is set, returns the module type
     public fun assert_valid_module_version<M>(treasury: &Treasury, version: u16): TypeName {
-        abort 0;
+        abort 0
     }
 
     /// =====================
@@ -200,17 +200,17 @@ module bucket_v2_usd::usdb {
 
     /// Borrows the mutable TreasuryCap from the Treasury object
     fun borrow_cap_mut(treasury: &mut Treasury): &mut TreasuryCap<USDB> {
-        abort 0;
+        abort 0
     }
 
     /// Borrows the immutable TreasuryCap from the Treasury object
     fun borrow_cap(treasury: &Treasury): &TreasuryCap<USDB> {
-        abort 0;
+        abort 0
     }
 
     /// Borrows the mutable LimitedSupply for a module, asserting validity
     fun borrow_supply_mut<M>(treasury: &mut Treasury): &mut LimitedSupply {
-        abort 0;
+        abort 0
     }
 
     /// =====================

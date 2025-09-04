@@ -85,7 +85,7 @@ module bucket_v2_oracle::aggregator {
         outlier_tolerance_bps: u64,
         ctx: &mut TxContext,
     ): PriceAggregator<T> {
-        abort 0;
+        abort 0
     }
 
     /// Entry function to create and share a new PriceAggregator object
@@ -96,7 +96,7 @@ module bucket_v2_oracle::aggregator {
         outlier_tolerance_bps: u64,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Set or update the weight for a specific rule type
@@ -105,7 +105,7 @@ module bucket_v2_oracle::aggregator {
         _cap: &ListingCap,
         new_weight: u8,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Set the minimum total weight required for aggregation
@@ -114,7 +114,7 @@ module bucket_v2_oracle::aggregator {
         _cap: &ListingCap,
         weight_threshold: u64,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_outlier_tolerance<T>(
@@ -122,7 +122,7 @@ module bucket_v2_oracle::aggregator {
         _cap: &ListingCap,
         outlier_tolerance_bps: u64,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Public Funs
@@ -132,7 +132,7 @@ module bucket_v2_oracle::aggregator {
         self: &PriceAggregator<T>,
         mut collector: PriceCollector<T>,
     ): PriceResult<T> {
-        abort 0;
+        abort 0
     }
 
     /// Getter Functions
@@ -154,6 +154,6 @@ module bucket_v2_oracle::aggregator {
 
     /// Internal fun to remove outlier
     fun remove_outliers<T>(self: &PriceAggregator<T>, collector: &mut PriceCollector<T>) {
-        abort 0;
+        abort 0
     }
 }

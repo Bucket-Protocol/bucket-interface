@@ -54,7 +54,7 @@ module bucket_v2_psm::pool {
         price_tolerance_bps: u64,
         ctx: &mut TxContext,
     ): Pool<T> {
-        abort 0;
+        abort 0
     }
 
     #[allow(lint(share_owned))]
@@ -67,7 +67,7 @@ module bucket_v2_psm::pool {
         price_tolerance_bps: u64,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_fee_config<T>(
@@ -77,11 +77,11 @@ module bucket_v2_psm::pool {
         swap_in_fee_rate_bps: u64,
         swap_out_fee_rate_bps: u64,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_price_tolerance<T>(pool: &mut Pool<T>, _cap: &AdminCap, tolerance_bps: u64) {
-        abort 0;
+        abort 0
     }
 
     /// Public Funs
@@ -94,7 +94,7 @@ module bucket_v2_psm::pool {
         partner: &Option<AccountRequest>,
         ctx: &mut TxContext,
     ): Coin<USDB> {
-        abort 0;
+        abort 0
     }
 
     public fun swap_out<T>(
@@ -105,7 +105,7 @@ module bucket_v2_psm::pool {
         partner: &Option<AccountRequest>,
         ctx: &mut TxContext,
     ): Coin<T> {
-        abort 0;
+        abort 0
     }
 
     // Getter Funs
@@ -116,15 +116,15 @@ module bucket_v2_psm::pool {
 
     // scaling factor for conversing collateral assets to USDB
     public fun conversion_rate<T>(pool: &Pool<T>): Float {
-        abort 0;
+        abort 0
     }
 
     public fun swap_in_fee_rate<T>(pool: &Pool<T>, partner: Option<address>): Float {
-        abort 0;
+        abort 0
     }
 
     public fun swap_out_fee_rate<T>(pool: &Pool<T>, partner: Option<address>): Float {
-        abort 0;
+        abort 0
     }
 
     public fun balance<T>(pool: &Pool<T>): u64 {
@@ -151,7 +151,7 @@ module bucket_v2_psm::pool {
         fee_rate: Float,
         ctx: &mut TxContext,
     ): Coin<USDB> {
-        abort 0;
+        abort 0
     }
 
     fun swap_out_internal<T>(
@@ -161,10 +161,10 @@ module bucket_v2_psm::pool {
         fee_rate: Float,
         ctx: &mut TxContext,
     ): Coin<T> {
-        abort 0;
+        abort 0
     }
 
     fun check_price<T>(pool: &Pool<T>, price: &PriceResult<T>) {
-        abort 0;
+        abort 0
     }
 }

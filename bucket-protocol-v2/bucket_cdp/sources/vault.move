@@ -157,7 +157,7 @@ module bucket_v2_cdp::vault {
         min_collateral_ratio: Float,
         ctx: &mut TxContext,
     ): Vault<T> {
-        abort 0;
+        abort 0
     }
 
     /// Entry point for creating a new vault object and sharing it on chain
@@ -173,11 +173,11 @@ module bucket_v2_cdp::vault {
         min_collateral_ratio_bps: u64,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_supply_limit<T>(vault: &mut Vault<T>, _cap: &AdminCap, limit: u64) {
-        abort 0;
+        abort 0
     }
 
     public fun set_interest_rate<T>(
@@ -188,27 +188,27 @@ module bucket_v2_cdp::vault {
         interest_rate_bps: u64,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_liquidation_rule<T, LR: drop>(vault: &mut Vault<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     public fun add_request_check<T, W: drop>(vault: &mut Vault<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_request_check<T, W: drop>(vault: &mut Vault<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     public fun add_response_check<T, W: drop>(vault: &mut Vault<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_response_check<T, W: drop>(vault: &mut Vault<T>, _cap: &AdminCap) {
-        abort 0;
+        abort 0
     }
 
     public fun set_manager_role<T>(
@@ -217,11 +217,11 @@ module bucket_v2_cdp::vault {
         manager: address,
         level: u8,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_manager_role<T>(vault: &mut Vault<T>, _cap: &AdminCap, manager: address) {
-        abort 0;
+        abort 0
     }
 
     public fun set_security_by_admin<T>(
@@ -230,11 +230,11 @@ module bucket_v2_cdp::vault {
         level: Option<u8>,
         ctx: &TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     public fun set_security_by_manager<T>(vault: &mut Vault<T>, level: u8, ctx: &TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// Public Funs
@@ -249,7 +249,7 @@ module bucket_v2_cdp::vault {
         request: UpdateRequest<T>,
         ctx: &mut TxContext,
     ): (Coin<T>, Coin<USDB>, UpdateResponse<T>) {
-        abort 0;
+        abort 0
     }
 
     /// Destroy a response object, checking required witnesses (for post-processing)
@@ -258,7 +258,7 @@ module bucket_v2_cdp::vault {
         treasury: &Treasury,
         response: UpdateResponse<T>,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Creates a debtor request (user borrows or repays, can deposit/withdraw)
@@ -271,7 +271,7 @@ module bucket_v2_cdp::vault {
         repayment: Coin<USDB>,
         withdraw_amount: u64,
     ): UpdateRequest<T> {
-        abort 0;
+        abort 0
     }
 
     /// Creates a donor request (third party repays on behalf of a debtor, can deposit)
@@ -282,7 +282,7 @@ module bucket_v2_cdp::vault {
         deposit: Coin<T>,
         repayment: Coin<USDB>,
     ): UpdateRequest<T> {
-        abort 0;
+        abort 0
     }
 
     /// Liquidate an unhealthy position, returning a request to update the position
@@ -296,7 +296,7 @@ module bucket_v2_cdp::vault {
         _liquidation_rule: LR,
         ctx: &mut TxContext,
     ): UpdateRequest<T> {
-        abort 0;
+        abort 0
     }
 
     public fun collect_interest<T>(
@@ -305,7 +305,7 @@ module bucket_v2_cdp::vault {
         clock: &Clock,
         ctx: &mut TxContext,
     ): Double {
-        abort 0;
+        abort 0
     }
 
     /// Getter Funs
@@ -361,12 +361,12 @@ module bucket_v2_cdp::vault {
         clock: &Clock,
         coll_price: &PriceResult<T>,
     ): bool {
-        abort 0;
+        abort 0
     }
 
     /// Get up-to-date collateral and debt for a debtor (including accrued interest)
     public fun get_position_data<T>(vault: &Vault<T>, debtor: address, clock: &Clock): (u64, u64) {
-        abort 0;
+        abort 0
     }
 
     public fun try_get_position_data<T>(
@@ -374,12 +374,12 @@ module bucket_v2_cdp::vault {
         debtor: address,
         clock: &Clock,
     ): (u64, u64) {
-        abort 0;
+        abort 0
     }
 
     /// Get raw position data (collateral, debt, timestamp) for a debtor
     public fun get_raw_position_data<T>(vault: &Vault<T>, debtor: address): (u64, u64, Double) {
-        abort 0;
+        abort 0
     }
 
     /// Get the vault's object ID
@@ -403,7 +403,7 @@ module bucket_v2_cdp::vault {
         mut cursor: Option<address>,
         page_size: u64,
     ): (vector<PositionData>, Option<address>) {
-        abort 0;
+        abort 0
     }
 
     public use fun position_data as PositionData.data;
@@ -422,21 +422,21 @@ module bucket_v2_cdp::vault {
         amount: u64,
         ctx: &mut TxContext,
     ): Coin<USDB> {
-        abort 0;
+        abort 0
     }
 
     /// Burn USDB from a user, decreasing the vault's supply counter
     fun burn_usdb<T>(vault: &mut Vault<T>, treasury: &mut Treasury, coin: Coin<USDB>) {
-        abort 0;
+        abort 0
     }
 
     fun current_vault_interest_unit<T>(vault: &Vault<T>, clock: &Clock): Double {
-        abort 0;
+        abort 0
     }
 
     /// Calculate interest accrued on a position since last update
     fun interest_amount(position: &Position, vault_interest_unit: Double): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Accrue interest to a position, updating its debt and timestamp
@@ -447,7 +447,7 @@ module bucket_v2_cdp::vault {
         clock: &Clock,
         ctx: &mut TxContext,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Constant: milliseconds in one year
@@ -455,11 +455,11 @@ module bucket_v2_cdp::vault {
 
     /// check vault security level
     fun check_security_level<T>(vault: &Vault<T>, level: u8) {
-        abort 0;
+        abort 0
     }
 
     /// check if the position is locked
     fun assert_position_is_not_locked<T>(vault: &Vault<T>, account: address) {
-        abort 0;
+        abort 0
     }
 }

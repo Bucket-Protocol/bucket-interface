@@ -36,7 +36,7 @@ public(package) fun emit_vault_created<T>(
     supply_limit: u64,
     min_coll_ratio: Float,
 ) {
-    abort 0;
+    abort 0
 }
 
 /// Event emitted when the supply limit of a vault is updated.
@@ -61,7 +61,7 @@ public(package) fun emit_supply_limit_updated<T>(
     before: u64,
     after: u64,
 ) {
-    abort 0;
+    abort 0
 }
 
 /// Event emitted when the supply limit of a vault is updated.
@@ -83,7 +83,7 @@ public(package) fun emit_interest_rate_updated<T>(
     vault_id: ID,
     interest_rate_bps: u64
 ) {
-    abort 0;
+    abort 0
 }
 
 /// Event emitted when the liquidation rule of a vault is updated.
@@ -108,7 +108,7 @@ public(package) fun emit_liquidation_rule_updated<T>(
     before: TypeName,
     after: TypeName,
 ) {
-    abort 0;
+    abort 0
 }
 
 /// Event emitted when a position in a vault is updated (e.g., deposit, borrow, repay, withdraw).
@@ -161,7 +161,7 @@ public(package) fun emit_position_updated<T>(
     current_debt_amount: u64,
     memo: String,
 ) {
-    abort 0;
+    abort 0
 }
 
 public struct SetSecurity has copy, drop{
@@ -172,5 +172,5 @@ public struct SetSecurity has copy, drop{
 }
 
 public(package) fun emit_set_security_level<T>(vault_id: ID, sender: address, level: Option<u8>){
-    abort 0;
+    abort 0
 }

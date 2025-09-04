@@ -13,7 +13,7 @@ module bucket_v2_oracle::collector {
 
     /// Creates a new, empty PriceCollector for a given context T.
     public fun new<T>(): PriceCollector<T> {
-        abort 0;
+        abort 0
     }
 
     // Collects a price for a rule type R into the collector.
@@ -26,17 +26,17 @@ module bucket_v2_oracle::collector {
         _witenss: R,
         price: Option<Float>,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Returns an immutable reference to the contents VecMap of the collector.
     /// This allows inspection of all collected prices by rule type.
     public fun contents<T>(collector: &PriceCollector<T>): &VecMap<TypeName, Option<Float>> {
-        abort 0;
+        abort 0
     }
 
     /// Package fun to for aggregator module to remove outlier
     public(package) fun remove<T>(collector: &mut PriceCollector<T>, rule_type: &TypeName) {
-        abort 0;
+        abort 0
     }
 }

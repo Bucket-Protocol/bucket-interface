@@ -74,17 +74,17 @@ module bucket_saving_incentive::saving_incentive {
 
     /// Gets an immutable reference to a specific rewarder
     public fun get_rewarder<T, R>(reward_manager: &RewardManager<T>): &Rewarder<T, R> {
-        abort 0;
+        abort 0
     }
 
     /// Gets a mutable reference to a specific rewarder (internal use)
     fun get_rewarder_mut<T, R>(reward_manager: &mut RewardManager<T>): &mut Rewarder<T, R> {
-        abort 0;
+        abort 0
     }
 
     /// Returns all reward IDs managed by this reward manager
     public fun rewarder_ids<T>(reward_manager: &RewardManager<T>): &VecSet<ID> {
-        abort 0;
+        abort 0
     }
 
     /// Individual user's staking data for a specific reward token
@@ -185,7 +185,7 @@ module bucket_saving_incentive::saving_incentive {
 
     /// Checks if an account has staking data in the rewarder
     public fun account_exists<T, R>(rewarder: &Rewarder<T, R>, account_address: address): bool {
-        abort 0;
+        abort 0
     }
 
     /// Calculates the real-time reward amount for an account (settled + unsettled)
@@ -195,14 +195,14 @@ module bucket_saving_incentive::saving_incentive {
         account: address,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     // === Admin Functions ===
 
     /// Initialize the global registry (called once during deployment)
     fun init(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// Creates a new reward manager for a specific saving pool type
@@ -214,7 +214,7 @@ module bucket_saving_incentive::saving_incentive {
         _saving_pool: &SavingPool<T>,
         ctx: &mut TxContext,
     ): RewardManager<T> {
-        abort 0;
+        abort 0
     }
 
     public fun new_reward_manager_and_share<T>(
@@ -224,7 +224,7 @@ module bucket_saving_incentive::saving_incentive {
         _saving_pool: &SavingPool<T>,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Adds a new reward token to the reward manager
@@ -242,7 +242,7 @@ module bucket_saving_incentive::saving_incentive {
         clock: &Clock,
         ctx: &mut TxContext,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Withdraws tokens from the reward source (admin only)
@@ -254,7 +254,7 @@ module bucket_saving_incentive::saving_incentive {
         amount: u64,
         ctx: &mut TxContext,
     ): Coin<R> {
-        abort 0;
+        abort 0
     }
 
     /// Updates the reward flow rate (manager only)
@@ -266,7 +266,7 @@ module bucket_saving_incentive::saving_incentive {
         flow_interval: u64,
         request: &AccountRequest,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Updates when the reward distribution starts (manager only, before start time)
@@ -277,14 +277,14 @@ module bucket_saving_incentive::saving_incentive {
         timestamp: u64,
         request: &AccountRequest,
     ) {
-        abort 0;
+        abort 0
     }
 
     // === Public Functions ===
 
     /// Supplies reward tokens to the reward source
     public fun supply<T, R>(reward_manager: &mut RewardManager<T>, coin: Coin<R>) {
-        abort 0;
+        abort 0
     }
 
     /// Creates a checker for deposit actions to ensure rewarders are updated
@@ -293,7 +293,7 @@ module bucket_saving_incentive::saving_incentive {
         config: &GlobalConfig,
         deposit_response: DepositResponse<T>,
     ): DepositResponseChecker<T> {
-        abort 0;
+        abort 0
     }
 
     /// Updates reward state for a specific reward during deposit
@@ -304,7 +304,7 @@ module bucket_saving_incentive::saving_incentive {
         saving_pool: &SavingPool<T>,
         clock: &Clock,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Destroys the deposit checker and returns the original response
@@ -312,7 +312,7 @@ module bucket_saving_incentive::saving_incentive {
         deposit_checker: DepositResponseChecker<T>,
         config: &GlobalConfig,
     ): DepositResponse<T> {
-        abort 0;
+        abort 0
     }
 
     /// Claims all available rewards for the user
@@ -324,7 +324,7 @@ module bucket_saving_incentive::saving_incentive {
         clock: &Clock,
         ctx: &mut TxContext,
     ): Coin<R> {
-        abort 0;
+        abort 0
     }
 
     /// Creates a checker for withdraw actions to ensure rewarders are updated
@@ -333,7 +333,7 @@ module bucket_saving_incentive::saving_incentive {
         config: &GlobalConfig,
         withdraw_response: WithdrawResponse<T>,
     ): WithdrawResponseChecker<T> {
-        abort 0;
+        abort 0
     }
 
     /// Updates reward state for a specific reward during withdrawal
@@ -344,7 +344,7 @@ module bucket_saving_incentive::saving_incentive {
         saving_pool: &SavingPool<T>,
         clock: &Clock,
     ) {
-        abort 0;
+        abort 0
     }
 
     /// Destroys the withdraw checker and returns the original response
@@ -352,14 +352,14 @@ module bucket_saving_incentive::saving_incentive {
         withdraw_checker: WithdrawResponseChecker<T>,
         config: &GlobalConfig,
     ): WithdrawResponse<T> {
-        abort 0;
+        abort 0
     }
 
     // === Private Functions ===
 
     /// Settles pool-wide rewards by updating the global unit and moving tokens from source to pool
     fun settle_pool_reward<T, R>(rewarder: &mut Rewarder<T, R>, clock: &Clock) {
-        abort 0;
+        abort 0
     }
 
     /// Calculates how many reward tokens should be released and the new global unit
@@ -367,7 +367,7 @@ module bucket_saving_incentive::saving_incentive {
         rewarder: &Rewarder<T, R>,
         clock: &Clock,
     ): (u64, Double) {
-        abort 0;
+        abort 0
     }
 
     /// Calculates unsettled reward amount for an account based on unit difference
@@ -377,7 +377,7 @@ module bucket_saving_incentive::saving_incentive {
         prev_lp_balance: u64,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     /// Settles an individual account's rewards by calculating and crediting earned tokens
@@ -387,12 +387,12 @@ module bucket_saving_incentive::saving_incentive {
         prev_lp_balance: u64,
         clock: &Clock,
     ): u64 {
-        abort 0;
+        abort 0
     }
 
     // === Test Functions ===
     #[test_only]
     public fun init_for_testing(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 }

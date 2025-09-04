@@ -12,7 +12,7 @@ public struct CollectFee<phantom M> has copy, drop {
 }
 
 public(package) fun emit_collect_fee<T, M>(memo: String, amount: u64) {
-    abort 0;
+    abort 0
 }
 
 public struct ClaimFee<phantom M> has copy, drop {
@@ -21,5 +21,5 @@ public struct ClaimFee<phantom M> has copy, drop {
 }
 
 public(package) fun emit_claim_fee<T, M>(amount: u64) {
-    abort 0;
+    abort 0
 }

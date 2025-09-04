@@ -40,7 +40,7 @@ module bucket_v2_flash::config {
     // === Init ===
 
     fun init(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     // === Admin Functions ===
@@ -52,7 +52,7 @@ module bucket_v2_flash::config {
         fee_rate_bps: u64,
         max_amount: u64,
     ) {
-        abort 0;
+        abort 0
     }
 
     // === Public Functions ===
@@ -64,7 +64,7 @@ module bucket_v2_flash::config {
         value: u64,
         ctx: &mut TxContext,
     ): (Coin<USDB>, FlashMintReceipt) {
-        abort 0;
+        abort 0
     }
 
     public fun flash_burn(
@@ -73,7 +73,7 @@ module bucket_v2_flash::config {
         mut repayment: Coin<USDB>,
         receipt: FlashMintReceipt,
     ) {
-        abort 0;
+        abort 0
     }
 
     // === View Functions ===

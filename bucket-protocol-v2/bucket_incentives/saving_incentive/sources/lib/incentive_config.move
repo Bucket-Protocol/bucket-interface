@@ -30,7 +30,7 @@ module bucket_saving_incentive::incentive_config {
     /// Init
 
     fun init(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     #[test_only]
@@ -41,28 +41,28 @@ module bucket_saving_incentive::incentive_config {
     /// Admin Funs
 
     public fun add_version(_cap: &AdminCap, config: &mut GlobalConfig, version: u16) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_version(_cap: &AdminCap, config: &mut GlobalConfig, version: u16) {
-        abort 0;
+        abort 0
     }
 
     public fun add_manager(_cap: &AdminCap, config: &mut GlobalConfig, manager: address) {
-        abort 0;
+        abort 0
     }
 
     public fun remove_manager(_cap: &AdminCap, config: &mut GlobalConfig, manager: address) {
-        abort 0;
+        abort 0
     }
 
     /// Public Funs
 
     public fun assert_valid_package_version(config: &GlobalConfig) {
-        abort 0;
+        abort 0
     }
 
     public fun assert_sender_is_manager(config: &GlobalConfig, request: &AccountRequest) {
-        abort 0;
+        abort 0
     }
 }

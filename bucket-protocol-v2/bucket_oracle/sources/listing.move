@@ -16,18 +16,18 @@ module bucket_v2_oracle::listing {
 
     /// Initializes the ListingCap object and transfers it to the sender
     fun init(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 
     /// Registers an aggregator for a specific coin type T
     /// Fails if the coin type is already listed
     public(package) fun register<T>(cap: &mut ListingCap, aggregator_id: ID): TypeName {
-        abort 0;
+        abort 0
     }
 
     /// Initializes the ListingCap object for testing purposes
     #[test_only]
     public fun init_for_testing(ctx: &mut TxContext) {
-        abort 0;
+        abort 0
     }
 }

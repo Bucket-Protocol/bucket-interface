@@ -10,7 +10,7 @@ public struct AdminCap has key, store {
 /// Initializes the admin capability and transfers it to the sender.
 /// This function should be called once during module deployment or setup.
 fun init(ctx: &mut TxContext) {
-    abort 0;
+    abort 0
 }
 
 /// Test-only Functions
@@ -19,5 +19,5 @@ fun init(ctx: &mut TxContext) {
 /// This function is only available in test builds.
 #[test_only]
 public fun init_for_testing(ctx: &mut TxContext) {
-    abort 0;
+    abort 0
 }
