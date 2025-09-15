@@ -231,9 +231,6 @@ See individual module `Move.toml` files for testnet addresses.
 - **Integration Guide**: [examples/saving_plugins/READEME.md](examples/saving_plugins/READEME.md)
 - **API Reference**: Generated from source code comments
 
-## License
-
-[Specify your license here]
 
 ## Support
 
