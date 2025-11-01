@@ -7,7 +7,7 @@ published-at = "0x0b6ba9889bb71abc5fa89e4ad5db12e63bc331dba858019dd8d701bc91184d
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies]
-BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "mainnet"  }
+BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "feat/saving-vault" }
 # BucketOracle = { git = "https://github.com/Bucket-Protocol/oracle.git", rev = "test-only"  }
 BucketFramework = { local = "../framework" }
 Flask = { git = "https://github.com/Sparkling-Finance/contract.git", subdir = "flask", rev = "main"}
