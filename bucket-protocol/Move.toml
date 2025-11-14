@@ -2,7 +2,7 @@
 name = "BucketProtocol"
 edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
 version = "0.7.0"
-published-at = "0x0b6ba9889bb71abc5fa89e4ad5db12e63bc331dba858019dd8d701bc91184d79"
+published-at = "0x6675c87fa0c629c10d98aef6b15623d21b8945ca329ac93e43c5a223be7fe1c4"
 # license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
